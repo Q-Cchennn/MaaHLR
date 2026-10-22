@@ -1,0 +1,8 @@
+[
+  "进入签到: OCR template → expected",
+  "确认领取成功-签到: OCR template → expected",
+  "确认领取成功-好友: OCR template → expected",
+  "sub_开始游戏: replace → pair list",
+  "完成启动: removed ignore_error; failures now stop",
+  "完成启动: post_check → explicit recognition node"
+]

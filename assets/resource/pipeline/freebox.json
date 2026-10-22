@@ -1,0 +1,208 @@
+{
+    "领取免费礼包": {
+        "next": [
+            "常驻礼包页面检查",
+            "常驻礼包",
+            "进入采购",
+            "[JumpBack]返回主界面1",
+            "[JumpBack]返回主界面2",
+            "[JumpBack]返回主界面3"
+        ],
+        "timeout": 8000
+    },
+    "进入采购": {
+        "recognition": "OCR",
+        "expected": "采购",
+        "roi": [
+            339,
+            544,
+            105,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "常驻礼包页面检查",
+            "常驻礼包"
+        ],
+        "post_delay": 500,
+        "timeout": 5000
+    },
+    "常驻礼包": {
+        "recognition": "OCR",
+        "expected": "常驻礼包",
+        "roi": [
+            450,
+            357,
+            113,
+            29
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "next": [
+            "常驻礼包页面检查"
+        ],
+        "post_delay": 700,
+        "timeout": 5000
+    },
+    "每日惊喜盒子": {
+        "recognition": "OCR",
+        "expected": "每日惊喜|惊喜盒子",
+        "roi": [
+            170,
+            440,
+            1025,
+            255
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "next": [
+            "领取每日惊喜盒子"
+        ]
+    },
+    "领取每日惊喜盒子": {
+        "recognition": "OCR",
+        "expected": "免费",
+        "roi": [
+            587,
+            586,
+            112,
+            37
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "next": [
+            "确认领取成功-免费礼包"
+        ],
+        "timeout": 5000
+    },
+    "常驻礼包页面检查": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/常驻礼包已选中.png",
+                "roi": [
+                    400,
+                    337,
+                    215,
+                    70
+                ],
+                "threshold": 0.93
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    170,
+                    635,
+                    1025,
+                    60
+                ],
+                "expected": "每日.*礼包|每周.*礼包"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "每日惊喜盒子",
+            "免费礼包未显示待确认"
+        ],
+        "timeout": 5000
+    },
+    "免费礼包未显示待确认": {
+        "recognition": "OCR",
+        "roi": [
+            170,
+            440,
+            1025,
+            255
+        ],
+        "expected": "每日惊喜|惊喜盒子",
+        "inverse": true,
+        "action": "DoNothing",
+        "post_delay": 700,
+        "next": [
+            "免费礼包缺失页面复核"
+        ],
+        "timeout": 3000
+    },
+    "免费礼包已领取": {
+        "recognition": "OCR",
+        "roi": [
+            170,
+            440,
+            1025,
+            255
+        ],
+        "expected": "每日惊喜|惊喜盒子",
+        "inverse": true,
+        "action": "DoNothing",
+        "next": [
+            "免费礼包关闭页面"
+        ]
+    },
+    "确认领取成功-免费礼包": {
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "免费礼包关闭页面"
+        ],
+        "timeout": 5000
+    },
+    "免费礼包关闭页面": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "next": [
+            "免费礼包返回主页确认"
+        ],
+        "timeout": 5000
+    },
+    "免费礼包返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    },
+    "免费礼包缺失页面复核": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/常驻礼包已选中.png",
+                "roi": [
+                    400,
+                    337,
+                    215,
+                    70
+                ],
+                "threshold": 0.93
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    170,
+                    635,
+                    1025,
+                    60
+                ],
+                "expected": "每日.*礼包|每周.*礼包"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "每日惊喜盒子",
+            "免费礼包已领取"
+        ],
+        "timeout": 3000
+    }
+}

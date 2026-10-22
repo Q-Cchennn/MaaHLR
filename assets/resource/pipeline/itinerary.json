@@ -1,0 +1,396 @@
+{
+    "日程": {
+        "next": [
+            "日程今日已完成",
+            "进入日程",
+            "[JumpBack]进入校园",
+            "[JumpBack]返回主界面1",
+            "[JumpBack]返回主界面3"
+        ],
+        "timeout": 8000
+    },
+    "进入日程": {
+        "recognition": "OCR",
+        "roi": [
+            997,
+            577,
+            182,
+            143
+        ],
+        "expected": "日程",
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "post_wait_freezes": 150,
+        "next": [
+            "日程今日已完成",
+            "点击角色1"
+        ],
+        "post_delay": 800,
+        "timeout": 5000
+    },
+    "点击角色1": {
+        "action": "Click",
+        "target": [
+            147,
+            139,
+            18,
+            14
+        ],
+        "pre_delay": 100,
+        "next": [
+            "点击角色2"
+        ],
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            918,
+            579,
+            117,
+            80
+        ]
+    },
+    "点击角色2": {
+        "action": "Click",
+        "target": [
+            152,
+            231,
+            19,
+            22
+        ],
+        "pre_delay": 100,
+        "next": [
+            "点击角色3"
+        ]
+    },
+    "点击角色3": {
+        "action": "Click",
+        "target": [
+            152,
+            328,
+            16,
+            16
+        ],
+        "pre_delay": 100,
+        "next": [
+            "点击角色4"
+        ]
+    },
+    "点击角色4": {
+        "action": "Click",
+        "target": [
+            158,
+            424,
+            16,
+            17
+        ],
+        "pre_delay": 100,
+        "next": [
+            "点击角色5"
+        ]
+    },
+    "点击角色5": {
+        "action": "Click",
+        "target": [
+            307,
+            500,
+            45,
+            31
+        ],
+        "pre_delay": 100,
+        "next": [
+            "日程确定1"
+        ]
+    },
+    "日程确定1": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            918,
+            579,
+            117,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 150,
+        "post_wait_freezes": 800,
+        "next": [
+            "下一项日程"
+        ]
+    },
+    "下一项日程": {
+        "recognition": "TemplateMatch",
+        "template": "日常/日程箭头.png",
+        "action": "Click",
+        "roi": [
+            1046,
+            510,
+            154,
+            138
+        ],
+        "pre_wait_freezes": 200,
+        "next": [
+            "点击角色6"
+        ]
+    },
+    "点击角色6": {
+        "action": "Click",
+        "target": [
+            147,
+            139,
+            18,
+            14
+        ],
+        "pre_wait_freezes": 300,
+        "next": [
+            "日程确定2"
+        ],
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            918,
+            579,
+            117,
+            80
+        ]
+    },
+    "日程确定2": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            918,
+            579,
+            117,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 150,
+        "post_wait_freezes": 800,
+        "next": [
+            "寻找位置"
+        ]
+    },
+    "寻找位置": {
+        "recognition": "TemplateMatch",
+        "template": "日常/艾因头像.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_wait_freezes": 150,
+        "next": [
+            "寻找信封"
+        ]
+    },
+    "寻找信封": {
+        "next": [
+            "点击信封",
+            "点击行动"
+        ]
+    },
+    "点击行动": {
+        "action": "Click",
+        "target": [
+            1099,
+            464,
+            56,
+            45
+        ],
+        "next": [
+            "寻找信封"
+        ]
+    },
+    "点击信封": {
+        "recognition": "TemplateMatch",
+        "template": "日常/日程信封.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_wait_freezes": 150,
+        "next": [
+            "点击对话1"
+        ]
+    },
+    "点击对话1": {
+        "recognition": "OCR",
+        "expected": "艾因",
+        "action": "Click",
+        "target": [
+            737,
+            519,
+            23,
+            12
+        ],
+        "pre_delay": 200,
+        "next": [
+            "点击对话2"
+        ]
+    },
+    "点击对话2": {
+        "action": "Click",
+        "target": [
+            737,
+            519,
+            23,
+            12
+        ],
+        "pre_delay": 200,
+        "next": [
+            "点击对话3"
+        ]
+    },
+    "点击对话3": {
+        "action": "Click",
+        "target": [
+            737,
+            519,
+            23,
+            12
+        ],
+        "pre_delay": 200,
+        "post_wait_freezes": 800,
+        "next": [
+            "完成日程"
+        ]
+    },
+    "完成日程": {
+        "recognition": "OCR",
+        "expected": "完成",
+        "action": "Click",
+        "roi": [
+            1085,
+            560,
+            70,
+            41
+        ],
+        "pre_delay": 500,
+        "next": [
+            "日程关闭页面"
+        ]
+    },
+    "日程今日已完成": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    125,
+                    15,
+                    135,
+                    70
+                ],
+                "expected": "日程"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    440,
+                    190,
+                    560,
+                    125
+                ],
+                "expected": "[一-龥]{3,}"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    440,
+                    445,
+                    560,
+                    90
+                ],
+                "expected": "[一-龥]{3,}"
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1030,
+                    260,
+                    75,
+                    55
+                ],
+                "lower": [
+                    220,
+                    60,
+                    90
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 15
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1030,
+                    475,
+                    85,
+                    55
+                ],
+                "lower": [
+                    220,
+                    60,
+                    90
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 15
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "日程关闭页面"
+        ],
+        "timeout": 5000
+    },
+    "日程关闭页面": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "next": [
+            "日程返回主页确认",
+            "日程返回校园"
+        ],
+        "timeout": 5000
+    },
+    "日程返回校园": {
+        "recognition": "OCR",
+        "expected": "校园",
+        "roi": [
+            120,
+            10,
+            180,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            40,
+            25,
+            40,
+            35
+        ],
+        "post_delay": 600,
+        "next": [
+            "日程返回主页确认"
+        ],
+        "timeout": 5000
+    },
+    "日程返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    }
+}

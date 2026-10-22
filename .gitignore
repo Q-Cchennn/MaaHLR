@@ -440,7 +440,10 @@ enc_temp_folder/*
 .nuke/temp/*
 
 # Build
-deps
+deps/*
+!deps/tools/
+deps/tools/*
+!deps/tools/*.schema.json
 build
 install
 
@@ -449,3 +452,11 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+# Local capture and fetched OCR source
+/screenshots/
+/assets/MaaCommonAssets/
+
+/.validation-deps/
+
+# Machine-specific shortcuts
+*.lnk

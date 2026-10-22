@@ -1,50 +1,171 @@
 {
-    "好友":{
-        "next":[
-            "进入好友"
+    "好友": {
+        "next": [
+            "好友赠领已完成",
+            "点击领取体力",
+            "确认领取成功-好友",
+            "进入好友",
+            "[JumpBack]好友入口返回1",
+            "[JumpBack]好友入口返回2",
+            "[JumpBack]好友入口返回3"
         ],
-        "interrupt":[
-            "返回主界面1",
-            "返回主界面2",
-            "返回主界面3"
-        ]
+        "timeout": 8000
     },
-    "进入好友":{
+    "进入好友": {
         "recognition": "OCR",
-        "roi":[1114, 585, 166, 135],
+        "roi": [
+            1114,
+            585,
+            166,
+            135
+        ],
         "expected": "好友",
-        "action":"Click",
-        "next":[
-            "点击领取体力"
-        ]
-    },
-    "点击领取体力":{
-        "recognition": "OCR",
-        "roi":[907, 575, 281, 145],
-        "expected": "赠领",
-        "action":"Click",
-        "pre_delay": 3000,
-        "next":[
+        "action": "Click",
+        "next": [
+            "好友赠领已完成",
+            "点击领取体力",
             "确认领取成功-好友"
         ],
-        "on_error":[
-            "返回主界面2"
-        ]
+        "post_delay": 500,
+        "timeout": 5000
     },
-    "确认领取成功-好友":{
+    "点击领取体力": {
+        "action": "Click",
+        "pre_delay": 200,
+        "next": [
+            "确认领取成功-好友",
+            "好友赠领已完成"
+        ],
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    940,
+                    625,
+                    250,
+                    85
+                ],
+                "expected": "赠领"
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/好友赠领已完成.png",
+                "roi": [
+                    940,
+                    625,
+                    250,
+                    85
+                ],
+                "method": 10001,
+                "threshold": 0.995,
+                "inverse": true
+            }
+        ],
+        "post_delay": 500,
+        "timeout": 5000
+    },
+    "确认领取成功-好友": {
         "recognition": "OCR",
-        "template": "恭喜获得",
         "action": "Click",
         "pre_delay": 500,
-        "next":[
-            "返回主界面2"
+        "next": [
+            "好友关闭页面"
+        ],
+        "expected": "恭喜获得"
+    },
+    "返回主界面2": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "pre_delay": 2000
+    },
+    "好友赠领已完成": {
+        "recognition": "TemplateMatch",
+        "template": "日常/好友赠领已完成.png",
+        "roi": [
+            940,
+            625,
+            250,
+            85
+        ],
+        "method": 10001,
+        "threshold": 0.995,
+        "action": "DoNothing",
+        "next": [
+            "好友关闭页面"
         ]
     },
-    "返回主界面2":{
+    "好友关闭页面": {
         "recognition": "TemplateMatch",
-        "roi": [0, 0, 145, 137],
-        "template":"日常/叉1.png",
-        "action":"Click",
-        "pre_delay": 2000
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "好友返回主页确认"
+        ]
+    },
+    "好友返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    },
+    "好友入口返回1": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            130
+        ],
+        "template": "日常/箭头1.png",
+        "action": "Click",
+        "max_hit": 3,
+        "pre_delay": 200,
+        "post_delay": 500
+    },
+    "好友入口返回2": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "max_hit": 3,
+        "pre_delay": 200,
+        "post_delay": 500
+    },
+    "好友入口返回3": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            18,
+            9,
+            140,
+            146
+        ],
+        "template": "日常/箭头3.png",
+        "action": "Click",
+        "max_hit": 3,
+        "pre_delay": 200,
+        "post_delay": 500
     }
 }

@@ -1,0 +1,2617 @@
+{
+    "画展": {
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展场次1就绪",
+            "画展场次2入口归位",
+            "进入画展",
+            "[JumpBack]进入校园",
+            "[JumpBack]返回主界面1",
+            "[JumpBack]返回主界面3"
+        ],
+        "timeout": 8000
+    },
+    "进入校园": {
+        "recognition": "OCR",
+        "roi": [
+            19,
+            299,
+            62,
+            52
+        ],
+        "expected": "校园",
+        "action": "Click",
+        "target": [
+            33,
+            283,
+            15,
+            16
+        ],
+        "pre_wait_freezes": 100
+    },
+    "进入画展": {
+        "recognition": "OCR",
+        "roi": [
+            904,
+            568,
+            177,
+            152
+        ],
+        "expected": "画展",
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展场次1就绪",
+            "画展场次2入口归位"
+        ],
+        "post_delay": 800,
+        "timeout": 5000
+    },
+    "结束展览1": {
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "确认领取成功-画展1"
+        ],
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    618,
+                    540,
+                    398,
+                    65
+                ],
+                "expected": "确定"
+            }
+        ],
+        "post_delay": 700,
+        "timeout": 5000,
+        "box_index": 1,
+        "pre_delay": 200
+    },
+    "选择奖励1": {
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "确认领取成功-画展1"
+        ]
+    },
+    "确认领取成功-画展1": {
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "target": [
+            565,
+            556,
+            28,
+            22
+        ],
+        "pre_wait_freezes": 100,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择地点1"
+        ],
+        "post_delay": 500,
+        "timeout": 5000
+    },
+    "选择地点1": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    620,
+                    565,
+                    460,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            835,
+            385,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长1"
+        ]
+    },
+    "画展申请1": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    920,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            945,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展1地点1加成检查"
+        ]
+    },
+    "进入场次2": {
+        "recognition": "TemplateMatch",
+        "template": "日常/画展场次1.png",
+        "roi": [
+            410,
+            130,
+            120,
+            115
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": [
+            1200,
+            365,
+            28,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 1200,
+        "timeout": 6000,
+        "max_hit": 2,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展场次2就绪"
+        ]
+    },
+    "结束展览2": {
+        "action": "Click",
+        "pre_wait_freezes": 150,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "确认领取成功-画展2"
+        ],
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    618,
+                    540,
+                    398,
+                    65
+                ],
+                "expected": "确定"
+            }
+        ],
+        "post_delay": 700,
+        "timeout": 5000,
+        "box_index": 1,
+        "pre_delay": 200
+    },
+    "选择奖励2": {
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "确认领取成功-画展2"
+        ]
+    },
+    "确认领取成功-画展2": {
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "target": [
+            565,
+            556,
+            28,
+            22
+        ],
+        "pre_wait_freezes": 100,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择地点2"
+        ],
+        "post_delay": 500,
+        "timeout": 5000
+    },
+    "选择地点2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    700,
+                    565,
+                    420,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            940,
+            385,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长2"
+        ]
+    },
+    "画展申请2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1025,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            1050,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展2地点1加成检查"
+        ]
+    },
+    "画展场次1就绪": {
+        "recognition": "TemplateMatch",
+        "template": "日常/画展场次1.png",
+        "roi": [
+            410,
+            130,
+            120,
+            115
+        ],
+        "threshold": 0.9,
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展进行中1",
+            "结束展览1",
+            "选择画展时长1",
+            "选择地点1"
+        ],
+        "timeout": 5000
+    },
+    "画展场次2入口归位": {
+        "recognition": "TemplateMatch",
+        "template": "日常/画展场次2.png",
+        "roi": [
+            515,
+            130,
+            120,
+            115
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": [
+            380,
+            365,
+            28,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 1200,
+        "timeout": 6000,
+        "max_hit": 2,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展场次1就绪"
+        ]
+    },
+    "画展进行中1": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "expected": "宣传倒计时",
+                "roi": [
+                    850,
+                    410,
+                    300,
+                    65
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "取消宣传",
+                "roi": [
+                    510,
+                    540,
+                    330,
+                    70
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "进入场次2"
+        ],
+        "timeout": 5000
+    },
+    "画展进行中2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "expected": "宣传倒计时",
+                "roi": [
+                    850,
+                    410,
+                    300,
+                    65
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "取消宣传",
+                "roi": [
+                    510,
+                    540,
+                    330,
+                    70
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展关闭页面"
+        ],
+        "timeout": 5000
+    },
+    "画展场次2就绪": {
+        "recognition": "TemplateMatch",
+        "template": "日常/画展场次2.png",
+        "roi": [
+            515,
+            130,
+            120,
+            115
+        ],
+        "threshold": 0.9,
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展进行中2",
+            "结束展览2",
+            "选择画展时长2",
+            "选择地点2"
+        ],
+        "timeout": 5000
+    },
+    "画展关闭页面": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            145,
+            137
+        ],
+        "template": "日常/叉1.png",
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展返回主页确认",
+            "画展返回校园"
+        ],
+        "timeout": 5000
+    },
+    "画展返回校园": {
+        "recognition": "OCR",
+        "expected": "校园",
+        "roi": [
+            120,
+            10,
+            180,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            40,
+            25,
+            40,
+            35
+        ],
+        "post_delay": 600,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展返回主页确认"
+        ],
+        "timeout": 5000
+    },
+    "画展返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    },
+    "画展申请表标识": {
+        "recognition": "OCR",
+        "roi": [
+            600,
+            170,
+            480,
+            55
+        ],
+        "expected": "画展.*申请表",
+        "action": "DoNothing"
+    },
+    "选择画展时长1": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    495,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            880,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择1"
+        ]
+    },
+    "画展快速选择1": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    740,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请1"
+        ]
+    },
+    "选择画展时长2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    600,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            985,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择2"
+        ]
+    },
+    "画展快速选择2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    845,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请2"
+        ]
+    },
+    "画展确认切换编辑信息": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    220,
+                    260,
+                    860,
+                    190
+                ],
+                "expected": "切换后.*画展|编辑信息无法保留"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    700,
+                    430,
+                    240,
+                    110
+                ],
+                "expected": "确定"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 700,
+        "max_hit": 4
+    },
+    "画展1地点1加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    545,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点1满加成",
+            "画展1地点1低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点1满加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中1"
+        ]
+    },
+    "画展1地点1低加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点1取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点1取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    525,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展1地点1确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展1地点1确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点1_地点2"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点1_地点2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    620,
+                    565,
+                    460,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            845,
+            250,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长1_地点2"
+        ]
+    },
+    "选择画展时长1_地点2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    495,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            880,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择1_地点2"
+        ]
+    },
+    "画展快速选择1_地点2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    740,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请1_地点2"
+        ]
+    },
+    "画展申请1_地点2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    920,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            945,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展1地点2加成检查"
+        ]
+    },
+    "画展1地点2加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    545,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点2满加成",
+            "画展1地点2低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点2满加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中1"
+        ]
+    },
+    "画展1地点2低加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点2取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点2取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    525,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展1地点2确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展1地点2确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点1_地点3"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点1_地点3": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    620,
+                    565,
+                    460,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            585,
+            340,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长1_地点3"
+        ]
+    },
+    "选择画展时长1_地点3": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    495,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            880,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择1_地点3"
+        ]
+    },
+    "画展快速选择1_地点3": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    740,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请1_地点3"
+        ]
+    },
+    "画展申请1_地点3": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    920,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            945,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展1地点3加成检查"
+        ]
+    },
+    "画展1地点3加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    545,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点3满加成",
+            "画展1地点3低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点3满加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中1"
+        ]
+    },
+    "画展1地点3低加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点3取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点3取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    525,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展1地点3确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展1地点3确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点1_地点4"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点1_地点4": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    620,
+                    565,
+                    460,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            745,
+            470,
+            65,
+            50
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长1_地点4"
+        ]
+    },
+    "选择画展时长1_地点4": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次1.png",
+                "roi": [
+                    410,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    495,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            880,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择1_地点4"
+        ]
+    },
+    "画展快速选择1_地点4": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    740,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请1_地点4"
+        ]
+    },
+    "画展申请1_地点4": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    920,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            945,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展1地点4加成检查"
+        ]
+    },
+    "画展1地点4加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中1",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    545,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展1地点4满加成",
+            "画展1地点4低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展1地点4满加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中1"
+        ]
+    },
+    "画展1地点4低加成": {
+        "recognition": "OCR",
+        "roi": [
+            545,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中1"
+        ]
+    },
+    "画展2地点1加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点1满加成",
+            "画展2地点1低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点1满加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中2"
+        ]
+    },
+    "画展2地点1低加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点1取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点1取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    630,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展2地点1确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展2地点1确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点2_地点2"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点2_地点2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    700,
+                    565,
+                    420,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            950,
+            250,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长2_地点2"
+        ]
+    },
+    "选择画展时长2_地点2": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    600,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            985,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择2_地点2"
+        ]
+    },
+    "画展快速选择2_地点2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    845,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请2_地点2"
+        ]
+    },
+    "画展申请2_地点2": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1025,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            1050,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展2地点2加成检查"
+        ]
+    },
+    "画展2地点2加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点2满加成",
+            "画展2地点2低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点2满加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中2"
+        ]
+    },
+    "画展2地点2低加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点2取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点2取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    630,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展2地点2确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展2地点2确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点2_地点3"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点2_地点3": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    700,
+                    565,
+                    420,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            690,
+            340,
+            65,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长2_地点3"
+        ]
+    },
+    "选择画展时长2_地点3": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    600,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            985,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择2_地点3"
+        ]
+    },
+    "画展快速选择2_地点3": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    845,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请2_地点3"
+        ]
+    },
+    "画展申请2_地点3": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1025,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            1050,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展2地点3加成检查"
+        ]
+    },
+    "画展2地点3加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点3满加成",
+            "画展2地点3低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点3满加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中2"
+        ]
+    },
+    "画展2地点3低加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点3取消宣传"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点3取消宣传": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    630,
+                    540,
+                    230,
+                    70
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "画展2地点3确认取消"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "画展2地点3确认取消": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    300,
+                    280,
+                    700,
+                    140
+                ],
+                "expected": "取消宣传会放弃|已经取得的宣传效果"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    360,
+                    470,
+                    240,
+                    90
+                ],
+                "expected": "取消宣传"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 700,
+        "next": [
+            "选择地点2_地点4"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "选择地点2_地点4": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    700,
+                    565,
+                    420,
+                    65
+                ],
+                "expected": "选择.*画展.*位置|选择.*举办位置"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            850,
+            470,
+            65,
+            50
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "选择画展时长2_地点4"
+        ]
+    },
+    "选择画展时长2_地点4": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/画展场次2.png",
+                "roi": [
+                    515,
+                    130,
+                    120,
+                    115
+                ],
+                "threshold": 0.9
+            },
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    600,
+                    425,
+                    475,
+                    70
+                ],
+                "expected": "宣传时间|小时"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            985,
+            440,
+            85,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 300,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展快速选择2_地点4"
+        ]
+    },
+    "画展快速选择2_地点4": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    845,
+                    510,
+                    175,
+                    65
+                ],
+                "expected": "快速选择"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展申请2_地点4"
+        ]
+    },
+    "画展申请2_地点4": {
+        "recognition": "And",
+        "all_of": [
+            "画展申请表标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1025,
+                    490,
+                    110,
+                    110
+                ],
+                "expected": "申请"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            1050,
+            520,
+            45,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 800,
+        "timeout": 8000,
+        "next": [
+            "[JumpBack]画展确认切换编辑信息",
+            "画展2地点4加成检查"
+        ]
+    },
+    "画展2地点4加成检查": {
+        "recognition": "And",
+        "all_of": [
+            "画展进行中2",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    470,
+                    110,
+                    65
+                ],
+                "expected": "^(100|[0-9]{1,2})%$",
+                "replace": [
+                    [
+                        "'",
+                        ""
+                    ],
+                    [
+                        "\\s",
+                        ""
+                    ],
+                    [
+                        "％",
+                        "%"
+                    ]
+                ]
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展2地点4满加成",
+            "画展2地点4低加成"
+        ],
+        "timeout": 5000
+    },
+    "画展2地点4满加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^100%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中2"
+        ]
+    },
+    "画展2地点4低加成": {
+        "recognition": "OCR",
+        "roi": [
+            650,
+            470,
+            110,
+            65
+        ],
+        "expected": "^[0-9]{1,2}%$",
+        "replace": [
+            [
+                "'",
+                ""
+            ],
+            [
+                "\\s",
+                ""
+            ],
+            [
+                "％",
+                "%"
+            ]
+        ],
+        "action": "DoNothing",
+        "next": [
+            "画展进行中2"
+        ]
+    }
+}

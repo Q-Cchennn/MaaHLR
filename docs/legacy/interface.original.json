@@ -1,0 +1,91 @@
+{
+  "name": "MaaHLR",
+  "url": "hhttps://github.com/MelinaQ/MaaHLR",
+  "custom_title": "MAA绘",
+  "version": "1.1.1",
+  "controller": [
+    {
+      "name": "adb 默认方式",
+      "type": "adb"
+    }
+  ],
+  "resource": [
+    {
+      "name": "默认",
+      "path": [
+        "{PROJECT_DIR}/resource"
+      ]
+    }
+  ],
+  "task": [
+    {
+      "name": "启动游戏",
+      "entry": "启动应用",
+      "check": true
+    },
+    {
+      "name":"签到",
+      "entry": "签到",
+      "check": true
+    },
+    {
+      "name": "领取好友体力",
+      "entry": "好友",
+      "check": true
+    },
+    {
+      "name": "社交任务",
+      "entry": "社交",
+      "check": true
+    },
+    {
+      "name": "升卡",
+      "entry": "开始升级画灵",
+      "check": true
+    },
+    {
+      "name": "升绘卷",
+      "entry": "开始升级绘卷",
+      "check": true
+    },
+    {
+      "name": "免费礼包",
+      "entry": "领取免费礼包",
+      "check": true
+    },
+    {
+      "name": "免费十连",
+      "entry": "免费十连",
+      "check": true
+    },
+    {
+      "name": "出行任务",
+      "entry": "出行",
+      "check": true
+    },
+    {
+      "name": "速写",
+      "entry": "速写",
+      "check": true
+    },
+    {
+      "name": "画展",
+      "entry": "画展",
+      "check": true
+    }
+  ],
+  "option": {
+    "测试": {
+      "cases": [
+        {
+          "name": "测试1",
+          "pipeline_override": {}
+        },
+        {
+          "name": "测试2",
+          "pipeline_override": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,136 +1,540 @@
 {
-    "出行":{
-        "next":[
-            "进入出行"
-        ],
-        "interrupt":[
-            "返回主界面1",
-            "返回主界面2",
-            "返回主界面3"
-        ]
-    },
-    "进入出行":{
-        "recognition": "TemplateMatch",
-        "roi":[30, 398, 52, 46],
-        "template": "日常/出行.png",
-        "action":"Click",
-        "next":[
+    "出行": {
+        "next": [
+            "确定人物",
+            "人物选择",
             "出行选择",
-            "人物选择"
+            "进入出行",
+            "[JumpBack]返回主界面1",
+            "[JumpBack]返回主界面2",
+            "[JumpBack]返回主界面3"
+        ],
+        "timeout": 8000
+    },
+    "进入出行": {
+        "recognition": "TemplateMatch",
+        "template": "日常/主页出行入口.png",
+        "roi": [
+            10,
+            345,
+            110,
+            125
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "target": [
+            35,
+            375,
+            50,
+            50
+        ],
+        "post_delay": 900,
+        "timeout": 5000,
+        "max_hit": 1,
+        "next": [
+            "确定人物",
+            "人物选择",
+            "出行选择"
         ]
     },
-    "出行选择":{
+    "出行选择": {
         "recognition": "OCR",
-        "roi":[982, 588, 114, 68],
+        "roi": [
+            982,
+            588,
+            114,
+            68
+        ],
         "expected": "去赴约",
-        "action":"Click",
+        "action": "Click",
         "pre_delay": 1000,
-        "next":[
+        "next": [
+            "确定人物",
             "人物选择"
+        ],
+        "post_delay": 700,
+        "timeout": 5000
+    },
+    "人物选择": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    320,
+                    80
+                ],
+                "expected": "课后出行|出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    550,
+                    620,
+                    700,
+                    95
+                ],
+                "expected": "留念|装扮|赠礼|提醒"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            45,
+            625,
+            50,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "max_hit": 1,
+        "next": [
+            "确定人物"
         ]
     },
-    "人物选择":{
+    "确定人物": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    320,
+                    80
+                ],
+                "expected": "课后出行|出行"
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    175,
+                    645,
+                    45,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    275,
+                    645,
+                    50,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    470,
+                    645,
+                    50,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            }
+        ],
         "action": "Click",
-        "target": [58, 641, 24, 30],
-        "pre_wait_freezes": 1000,
-        "pre_delay": 500,
-        "next":[
-            "确定人物"
-        ] 
-    },
-    "确定人物":{
-        "action": "Click",
-        "target": [58, 641, 24, 30],
-        "pre_wait_freezes": 500,
-        "next":[
+        "target": [
+            45,
+            625,
+            50,
+            55
+        ],
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "max_hit": 1,
+        "next": [
+            "收起出行人物栏",
             "点击赠礼"
         ]
     },
-    "点击赠礼":{
+    "点击赠礼": {
         "recognition": "OCR",
         "expected": "赠礼",
         "action": "Click",
         "pre_delay": 500,
-        "next":[
+        "next": [
             "选择礼物"
-        ]
+        ],
+        "timeout": 5000
     },
-    "选择礼物":{
+    "选择礼物": {
         "recognition": "OCR",
         "expected": "蛋糕",
         "action": "Click",
         "pre_wait_freezes": 500,
-        "next":[
+        "next": [
             "赠礼"
-        ]
+        ],
+        "timeout": 5000
     },
-    "赠礼":{
+    "赠礼": {
         "recognition": "OCR",
         "expected": "赠送",
-        "roi": [921, 644, 74, 43],
+        "roi": [
+            921,
+            644,
+            74,
+            43
+        ],
         "action": "Click",
         "pre_delay": 500,
-        "next":[
+        "next": [
+            "退出赠礼面板",
             "返回人物"
-        ]
+        ],
+        "timeout": 5000,
+        "post_delay": 600
     },
-    "返回人物":{
+    "返回人物": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "课后出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    850,
+                    640,
+                    140,
+                    70
+                ],
+                "expected": "赠礼"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "出行好感已达上限",
+            "出行点击人物互动",
+            "出行无互动提示",
+            "出行返回主页"
+        ],
+        "timeout": 5000,
+        "post_delay": 500
+    },
+    "收起出行人物栏": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    320,
+                    80
+                ],
+                "expected": "课后出行|出行"
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    175,
+                    645,
+                    45,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    275,
+                    645,
+                    50,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    470,
+                    645,
+                    50,
+                    45
+                ],
+                "lower": [
+                    220,
+                    65,
+                    80
+                ],
+                "upper": [
+                    255,
+                    180,
+                    200
+                ],
+                "count": 20
+            }
+        ],
         "action": "Click",
-        "target": [546, 445, 41, 44],
-        "post_wait_freezes": 300,
-        "next":[
-            "出行互动"
+        "target": [
+            520,
+            625,
+            30,
+            45
+        ],
+        "pre_delay": 200,
+        "post_delay": 500,
+        "timeout": 5000,
+        "max_hit": 1,
+        "next": [
+            "点击赠礼"
         ]
     },
-    "出行互动":{
+    "出行返回主页": {
         "recognition": "OCR",
+        "roi": [
+            95,
+            10,
+            330,
+            80
+        ],
+        "expected": "课后出行",
+        "action": "Click",
+        "target": [
+            40,
+            25,
+            40,
+            35
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "next": [
+            "出行返回主页确认"
+        ],
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "出行返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    },
+    "出行好感已达上限": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "课后出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    780,
+                    0,
+                    500,
+                    160
+                ],
+                "expected": "本日.*好感.*上限|好感获取.*上限"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "出行返回主页"
+        ],
+        "timeout": 5000
+    },
+    "出行点击人物互动": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "课后出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    780,
+                    0,
+                    500,
+                    160
+                ],
+                "expected": "与他互动"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            570,
+            330,
+            90,
+            120
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "max_hit": 8,
+        "next": [
+            "出行好感已达上限",
+            "出行点击人物互动",
+            "出行无互动提示",
+            "出行返回主页"
+        ],
+        "timeout": 5000
+    },
+    "出行无互动提示": {
+        "recognition": "OCR",
+        "roi": [
+            780,
+            0,
+            500,
+            160
+        ],
         "expected": "与他互动",
-        "roi": [1011, 33, 115, 53],
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "post_wait_freezes": 300,
-        "next":[
-            "点击人物1"
-        ]
+        "inverse": true,
+        "action": "DoNothing",
+        "post_delay": 700,
+        "next": [
+            "出行无互动提示复核"
+        ],
+        "timeout": 5000
     },
-    "点击人物1":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物2"]
+    "出行无互动提示复核": {
+        "recognition": "OCR",
+        "roi": [
+            95,
+            10,
+            330,
+            80
+        ],
+        "expected": "课后出行",
+        "action": "DoNothing",
+        "next": [
+            "出行好感已达上限",
+            "出行点击人物互动",
+            "出行返回主页"
+        ],
+        "timeout": 5000
     },
-    "点击人物2":{
+    "退出赠礼面板": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "课后出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    680,
+                    5,
+                    260,
+                    80
+                ],
+                "expected": "赠礼"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    820,
+                    610,
+                    220,
+                    100
+                ],
+                "expected": "赠送"
+            }
+        ],
         "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物3"]
-    },
-    "点击人物3":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物4"]
-    },
-    "点击人物4":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物5"]
-    },
-    "点击人物5":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物6"]
-    },
-    "点击人物6":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["点击人物7"]
-    },
-    "点击人物7":{
-        "action": "Click",
-        "target": [845, 427, 58, 82],
-        "next": ["点击人物8"]
-    },
-    "点击人物8":{
-        "action": "Click",
-        "target": [546, 445, 41, 44],
-        "next": ["返回主界面2"]
+        "target": [
+            290,
+            330,
+            90,
+            130
+        ],
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "返回人物"
+        ],
+        "timeout": 5000
     }
 }

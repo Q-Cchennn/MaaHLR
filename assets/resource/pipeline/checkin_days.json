@@ -1,0 +1,3598 @@
+{
+    "签到01日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到01日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            286,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到02日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到02日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            402,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到03日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到03日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            518,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到04日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到04日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            286,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到05日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到05日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            402,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到06日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到06日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            518,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到07日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到07日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            286,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到08日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到08日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            402,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到09日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到09日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            518,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到10日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到10日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    244,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    260,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            286,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到11日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到11日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    360,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    376,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            402,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到12日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到12日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    476,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    492,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            518,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到13日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到13日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            704,
+            132,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到14日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到14日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            820,
+            132,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到15日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到15日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            936,
+            132,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到16日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到16日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    82,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    120,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            1052,
+            132,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到17日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到17日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            704,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到18日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到18日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            820,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到19日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到19日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            936,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到20日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到20日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    193,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    231,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            1052,
+            243,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到21日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到21日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            704,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到22日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到22日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            820,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到23日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到23日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            936,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到24日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到24日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    304,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    342,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            1052,
+            354,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到25日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到25日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            704,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到26日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到26日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            820,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到27日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到27日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            936,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到28日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到28日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1010,
+                    415,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1026,
+                    453,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            1052,
+            465,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到29日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到29日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    662,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    678,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            704,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到30日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到30日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    778,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    794,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            820,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "签到31日已领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    205,
+                    185,
+                    180
+                ],
+                "upper": [
+                    248,
+                    240,
+                    239
+                ],
+                "count": 130
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "签到关闭页面"
+        ]
+    },
+    "签到31日可领取": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    894,
+                    526,
+                    55,
+                    39
+                ],
+                "lower": [
+                    195,
+                    55,
+                    35
+                ],
+                "upper": [
+                    255,
+                    145,
+                    125
+                ],
+                "count": 45
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    910,
+                    564,
+                    12,
+                    15
+                ],
+                "lower": [
+                    250,
+                    250,
+                    250
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 130
+            }
+        ],
+        "action": "Click",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取"
+        ],
+        "target": [
+            936,
+            576,
+            48,
+            36
+        ],
+        "pre_delay": 200,
+        "post_delay": 700,
+        "timeout": 5000,
+        "max_hit": 1
+    }
+}

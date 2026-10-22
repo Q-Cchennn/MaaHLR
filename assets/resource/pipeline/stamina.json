@@ -1,0 +1,168 @@
+{
+    "领取体力": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "体力弹窗领取",
+            "体力主页检查"
+        ],
+        "timeout": 5000
+    },
+    "体力主页检查": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "点击猫咪体力气泡",
+            "体力无气泡待确认"
+        ],
+        "timeout": 5000
+    },
+    "点击猫咪体力气泡": {
+        "recognition": "TemplateMatch",
+        "template": "日常/主页猫咪体力气泡.png",
+        "roi": [
+            310,
+            230,
+            230,
+            170
+        ],
+        "threshold": 0.85,
+        "action": "Click",
+        "post_delay": 700,
+        "max_hit": 1,
+        "next": [
+            "体力弹窗领取"
+        ],
+        "timeout": 5000
+    },
+    "体力无气泡待确认": {
+        "recognition": "TemplateMatch",
+        "template": "日常/主页猫咪体力气泡.png",
+        "roi": [
+            310,
+            230,
+            230,
+            170
+        ],
+        "threshold": 0.85,
+        "inverse": true,
+        "action": "DoNothing",
+        "post_delay": 700,
+        "next": [
+            "体力无气泡主页复核"
+        ],
+        "timeout": 3000
+    },
+    "体力无气泡主页复核": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "点击猫咪体力气泡",
+            "体力无气泡结束"
+        ],
+        "timeout": 3000
+    },
+    "体力无气泡结束": {
+        "recognition": "TemplateMatch",
+        "template": "日常/主页猫咪体力气泡.png",
+        "roi": [
+            310,
+            230,
+            230,
+            170
+        ],
+        "threshold": 0.85,
+        "inverse": true,
+        "action": "DoNothing"
+    },
+    "体力弹窗领取": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    630,
+                    125,
+                    540,
+                    210
+                ],
+                "expected": "来自.*馈赠|恢复.*体力"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    750,
+                    330,
+                    330,
+                    115
+                ],
+                "expected": "^领取$"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 700,
+        "max_hit": 1,
+        "next": [
+            "体力领取后主页确认",
+            "体力奖励弹窗",
+            "体力领取后关闭弹窗"
+        ],
+        "timeout": 5000
+    },
+    "体力奖励弹窗": {
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "target": [
+            180,
+            400,
+            40,
+            30
+        ],
+        "post_delay": 500,
+        "max_hit": 1,
+        "next": [
+            "体力领取后主页确认",
+            "体力领取后关闭弹窗"
+        ],
+        "timeout": 5000
+    },
+    "体力领取后关闭弹窗": {
+        "recognition": "OCR",
+        "roi": [
+            630,
+            125,
+            540,
+            210
+        ],
+        "expected": "来自.*馈赠|恢复.*体力",
+        "action": "Click",
+        "target": [
+            180,
+            400,
+            40,
+            30
+        ],
+        "post_delay": 700,
+        "max_hit": 1,
+        "next": [
+            "体力领取后主页确认"
+        ],
+        "timeout": 5000
+    },
+    "体力领取后主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    }
+}

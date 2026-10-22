@@ -1,0 +1,561 @@
+{
+    "假日": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "假日点击清单",
+            "假日主页检查"
+        ],
+        "timeout": 5000
+    },
+    "假日主页检查": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日主页入口",
+            "假日入口缺失待确认"
+        ],
+        "timeout": 5000
+    },
+    "假日主页入口": {
+        "recognition": "OCR",
+        "roi": [
+            550,
+            600,
+            145,
+            120
+        ],
+        "expected": "假日",
+        "action": "Click",
+        "post_delay": 700,
+        "max_hit": 1,
+        "next": [
+            "假日点击清单"
+        ],
+        "timeout": 5000,
+        "target": [
+            595,
+            625,
+            45,
+            45
+        ]
+    },
+    "假日入口缺失待确认": {
+        "recognition": "OCR",
+        "roi": [
+            550,
+            600,
+            145,
+            120
+        ],
+        "expected": "假日",
+        "inverse": true,
+        "action": "DoNothing",
+        "post_delay": 700,
+        "next": [
+            "假日入口缺失主页复核"
+        ],
+        "timeout": 3000
+    },
+    "假日入口缺失主页复核": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日主页入口",
+            "假日入口缺失结束"
+        ],
+        "timeout": 3000
+    },
+    "假日入口缺失结束": {
+        "recognition": "OCR",
+        "roi": [
+            550,
+            600,
+            145,
+            120
+        ],
+        "expected": "假日",
+        "inverse": true,
+        "action": "DoNothing"
+    },
+    "假日点击清单": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "假日"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    540,
+                    95,
+                    200,
+                    65
+                ],
+                "expected": "假日清单"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "假日清单无奖励",
+            "假日清单一键领取"
+        ],
+        "timeout": 5000
+    },
+    "假日清单一键领取": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            95,
+                            10,
+                            330,
+                            80
+                        ],
+                        "expected": "假日"
+                    },
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            410,
+                            190,
+                            830,
+                            380
+                        ],
+                        "expected": "每日清单|每周清单"
+                    }
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1020,
+                    595,
+                    240,
+                    90
+                ],
+                "expected": "一?键领取"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "假日清单奖励弹窗",
+            "假日清单没有可领取奖励提示",
+            "假日清单领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日清单奖励弹窗": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    350,
+                    65,
+                    550,
+                    120
+                ],
+                "expected": "恭喜获得|获得奖励"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    330,
+                    535,
+                    245,
+                    90
+                ],
+                "expected": "确认"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 3,
+        "next": [
+            "假日清单奖励弹窗",
+            "假日清单领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日清单领取后检查": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "假日"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    410,
+                    190,
+                    830,
+                    380
+                ],
+                "expected": "每日清单|每周清单"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日点击计划"
+        ],
+        "timeout": 5000
+    },
+    "假日点击计划": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "假日"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    400,
+                    95,
+                    180,
+                    65
+                ],
+                "expected": "假日计划"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "假日计划无奖励",
+            "假日计划一键领取"
+        ],
+        "timeout": 5000
+    },
+    "假日计划一键领取": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            95,
+                            10,
+                            330,
+                            80
+                        ],
+                        "expected": "假日"
+                    },
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            420,
+                            220,
+                            820,
+                            420
+                        ],
+                        "expected": "解锁高级计划|专属行程|假日行程|立即解锁"
+                    }
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1020,
+                    545,
+                    240,
+                    90
+                ],
+                "expected": "一?键领取"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "假日计划奖励弹窗",
+            "假日计划没有可领取奖励提示",
+            "假日计划领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日计划奖励弹窗": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    350,
+                    65,
+                    550,
+                    120
+                ],
+                "expected": "恭喜获得|获得奖励"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    330,
+                    535,
+                    245,
+                    90
+                ],
+                "expected": "确认"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 3,
+        "next": [
+            "假日计划奖励弹窗",
+            "假日计划领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日计划领取后检查": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "假日"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    420,
+                    220,
+                    820,
+                    420
+                ],
+                "expected": "解锁高级计划|专属行程|假日行程|立即解锁"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日返回主页"
+        ],
+        "timeout": 5000
+    },
+    "假日返回主页": {
+        "recognition": "OCR",
+        "roi": [
+            95,
+            10,
+            330,
+            80
+        ],
+        "expected": "假日",
+        "action": "Click",
+        "target": [
+            40,
+            25,
+            40,
+            35
+        ],
+        "post_delay": 700,
+        "max_hit": 1,
+        "next": [
+            "假日返回主页确认"
+        ],
+        "timeout": 5000
+    },
+    "假日返回主页确认": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "DoNothing"
+    },
+    "假日清单无奖励": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            95,
+                            10,
+                            330,
+                            80
+                        ],
+                        "expected": "假日"
+                    },
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            410,
+                            190,
+                            830,
+                            380
+                        ],
+                        "expected": "每日清单|每周清单"
+                    }
+                ]
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1060,
+                    608,
+                    160,
+                    38
+                ],
+                "lower": [
+                    175,
+                    175,
+                    175
+                ],
+                "upper": [
+                    245,
+                    245,
+                    245
+                ],
+                "count": 2500
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日点击计划"
+        ],
+        "timeout": 5000
+    },
+    "假日清单没有可领取奖励提示": {
+        "recognition": "OCR",
+        "roi": [
+            300,
+            120,
+            700,
+            120
+        ],
+        "expected": "没有可领取奖励",
+        "action": "DoNothing",
+        "post_delay": 800,
+        "next": [
+            "假日清单领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日计划无奖励": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            95,
+                            10,
+                            330,
+                            80
+                        ],
+                        "expected": "假日"
+                    },
+                    {
+                        "recognition": "OCR",
+                        "roi": [
+                            420,
+                            220,
+                            820,
+                            420
+                        ],
+                        "expected": "解锁高级计划|专属行程|假日行程|立即解锁"
+                    }
+                ]
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    1055,
+                    568,
+                    160,
+                    33
+                ],
+                "lower": [
+                    175,
+                    175,
+                    175
+                ],
+                "upper": [
+                    245,
+                    245,
+                    245
+                ],
+                "count": 2500
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "假日返回主页"
+        ],
+        "timeout": 5000
+    },
+    "假日计划没有可领取奖励提示": {
+        "recognition": "OCR",
+        "roi": [
+            300,
+            120,
+            700,
+            120
+        ],
+        "expected": "没有可领取奖励",
+        "action": "DoNothing",
+        "post_delay": 800,
+        "next": [
+            "假日计划领取后检查"
+        ],
+        "timeout": 5000
+    }
+}

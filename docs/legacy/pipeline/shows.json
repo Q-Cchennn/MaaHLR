@@ -1,0 +1,132 @@
+{
+    "画展":{
+        "next":[
+            "进入画展"
+        ],
+        "interrupt":[
+            "进入校园",
+            "返回主界面1",
+            "返回主界面3"
+        ]
+    },
+    "进入校园":{
+        "recognition": "OCR",
+        "roi": [19, 299, 62, 52],
+        "expected": "校园",
+        "action": "Click",
+        "target": [33, 283, 15, 16],
+        "pre_wait_freezes": 100
+    },
+    "进入画展":{
+        "recognition": "OCR",
+        "roi": [904, 568, 177, 152],
+        "expected": "画展",
+        "action":"Click",
+        "pre_wait_freezes": 50,
+        "next":[
+            "结束展览1",
+            "选择地点1"
+        ]
+    },
+    "结束展览1":{
+        "recognition": "OCR",
+        "roi": [618, 540, 398, 65],
+        "expected": "确定",
+        "action":"Click",
+        "pre_wait_freezes": 50,
+        "next":[
+            "确认领取成功-画展1"
+        ]
+    },
+    "选择奖励1":{
+        "next":[
+            "确认领取成功-画展1"
+        ]
+    },
+    "确认领取成功-画展1":{
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "target": [565, 556, 28, 22],
+        "pre_wait_freezes": 100,
+        "next":[
+            "选择地点1"
+        ]
+    },
+    "选择地点1":{
+        "recognition": "OCR",
+        "expected": "清音楼",
+        "roi": [509, 340, 202, 147],
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "next":[
+            "画展申请1"
+        ]
+    },
+    "画展申请1":{
+        "recognition": "OCR",
+        "roi": [879, 484, 265, 107],
+        "expected": "申请",
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "next":[
+            "进入场次2"
+        ]
+    },
+    "进入场次2":{
+        "recognition": "TemplateMatch",
+        "roi": [1175, 341, 69, 82],
+        "template": "日常/画展右箭头.png",
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "post_wait_freezes": 150,
+        "next":[
+            "结束展览2",
+            "选择地点2"
+        ]
+    },
+    "结束展览2":{
+        "recognition": "OCR",
+        "roi": [618, 540, 398, 65],
+        "expected": "确定",
+        "action":"Click",
+        "pre_wait_freezes": 150,
+        "next":[
+            "确认领取成功-画展2"
+        ]
+    },
+    "选择奖励2":{
+        "next":[
+            "确认领取成功-画展2"
+        ]
+    },
+    "确认领取成功-画展2":{
+        "recognition": "OCR",
+        "expected": "恭喜获得",
+        "action": "Click",
+        "target": [565, 556, 28, 22],
+        "pre_wait_freezes": 100,
+        "next":[
+            "选择地点2"
+        ]
+    },
+    "选择地点2":{
+        "recognition": "OCR",
+        "expected": "天文台",
+        "action": "Click",
+        "pre_wait_freezes": 150,
+        "next":[
+            "画展申请2"
+        ]
+    },
+    "画展申请2":{
+        "recognition": "OCR",
+        "roi": [879, 484, 265, 107],
+        "expected": "申请",
+        "action": "Click",
+        "pre_wait_freezes": 50,
+        "next":[
+            "返回主界面2"
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "开始升级绘卷": {
+        "next": [
+            "进入图鉴2"
+        ],
+        "interrupt":[
+            "返回主界面1",
+            "返回主界面2",
+            "返回主界面3"
+        ]
+    },
+    "进入图鉴2": {
+        "recognition": "OCR",
+        "expected": "图鉴",
+        "roi": [744, 590, 158, 130],
+        "action": "Click",
+        "next":[
+            "进入绘卷"
+        ]
+    },
+    "进入绘卷": {
+        "recognition": "OCR",
+        "expected": "绘",
+        "roi": [0, 83, 182, 422],
+        "action": "Click",
+        "next":[
+            "选择绘卷"
+        ]
+    },
+    "选择绘卷": {
+        "action": "Click",
+        "target": [369, 205, 37, 38],
+        "pre_wait_freezes": 300,
+        "next":[
+            "点击培养"
+        ]
+    }
+}

@@ -1,39 +1,187 @@
 {
     "开始升级绘卷": {
-        "precondition": {
-            "recognition": "TemplateMatch",
-            "template": "日常/笔记.png",
-            "pre_delay": 1000,
-            "pre_wait_freezes": 3000    
-        },
         "next": [
-            "进入图鉴2"
-        ]
+            "绘卷进入能力",
+            "进入绘卷列表",
+            "进入图鉴2",
+            "[JumpBack]返回主界面1",
+            "[JumpBack]返回主界面2",
+            "[JumpBack]返回主界面3"
+        ],
+        "timeout": 8000
     },
     "进入图鉴2": {
         "recognition": "OCR",
         "expected": "图鉴",
-        "roi": [744, 590, 158, 130],
+        "roi": [
+            744,
+            590,
+            158,
+            130
+        ],
         "action": "Click",
-        "next":[
-            "进入绘卷"   
-        ]
+        "next": [
+            "进入绘卷列表",
+            "进入绘卷"
+        ],
+        "post_delay": 500,
+        "timeout": 5000
     },
     "进入绘卷": {
         "recognition": "OCR",
-        "expected": "绘",
-        "roi": [0, 83, 182, 422],
+        "expected": "绘卷",
+        "roi": [
+            0,
+            83,
+            182,
+            422
+        ],
         "action": "Click",
-        "next":[
-            "选择绘卷"   
-        ]
+        "next": [
+            "选择绘卷"
+        ],
+        "post_delay": 500,
+        "timeout": 5000
     },
     "选择绘卷": {
         "action": "Click",
-        "target": [369, 205, 37, 38],
+        "target": [
+            165,
+            190,
+            90,
+            60
+        ],
         "pre_wait_freezes": 300,
-        "next":[
-            "点击培养"
-        ]
+        "next": [
+            "绘卷进入能力"
+        ],
+        "recognition": "OCR",
+        "expected": "图鉴",
+        "roi": [
+            120,
+            10,
+            180,
+            80
+        ],
+        "post_delay": 500,
+        "timeout": 5000
+    },
+    "进入绘卷列表": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    120,
+                    10,
+                    180,
+                    80
+                ],
+                "expected": "图鉴"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    15,
+                    290,
+                    100,
+                    170
+                ],
+                "expected": "绘卷"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "选择绘卷"
+        ],
+        "timeout": 5000
+    },
+    "绘卷进入能力": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    50,
+                    150,
+                    70
+                ],
+                "expected": "资料"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    810,
+                    50,
+                    170,
+                    70
+                ],
+                "expected": "能力"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "绘卷等级已满",
+            "绘卷点击培养"
+        ],
+        "timeout": 5000,
+        "max_hit": 2
+    },
+    "绘卷等级已满": {
+        "recognition": "OCR",
+        "expected": "等级已满",
+        "roi": [
+            1000,
+            150,
+            230,
+            150
+        ],
+        "action": "DoNothing",
+        "next": [
+            "等级提升"
+        ],
+        "timeout": 5000
+    },
+    "绘卷点击培养": {
+        "recognition": "OCR",
+        "expected": "培养",
+        "roi": [
+            991,
+            156,
+            223,
+            145
+        ],
+        "action": "Click",
+        "pre_delay": 300,
+        "next": [
+            "绘卷等级已满",
+            "绘卷点击提升"
+        ],
+        "post_delay": 500,
+        "timeout": 5000,
+        "max_hit": 1
+    },
+    "绘卷点击提升": {
+        "recognition": "OCR",
+        "expected": "提升",
+        "roi": [
+            1003,
+            351,
+            170,
+            133
+        ],
+        "action": "Click",
+        "pre_delay": 200,
+        "next": [
+            "等级提升"
+        ],
+        "post_delay": 1000,
+        "max_hit": 1,
+        "timeout": 5000
     }
 }

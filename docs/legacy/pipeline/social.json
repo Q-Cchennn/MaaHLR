@@ -1,0 +1,174 @@
+{
+    "社交": {
+        "next": [
+            "进入社交"
+        ],
+        "interrupt":[
+            "返回主界面1",
+            "返回主界面2",
+            "返回主界面3"
+        ]
+    },
+    "进入社交": {
+        "recognition": "OCR",
+        "expected": "社交",
+        "roi": [680, 441, 186, 131],
+        "action": "Click",
+        "next":[
+            "进入剧场"
+        ]
+    },
+    "进入剧场": {
+        "recognition": "TemplateMatch",
+        "template": "日常/进入剧场.png",
+        "action": "Click",
+        "pre_wait_freezes": 1000,
+        "next":[
+            "进入作品"
+        ]
+    },
+    "进入作品":{
+        "recognition": "OCR",
+        "expected": "剧场",
+        "roi": [159, 77, 211, 138],
+        "action": "Click",
+        "target": [619, 275, 129, 40],
+        "pre_wait_freezes": 2000,
+        "next": [
+            "剧场任务开始"
+        ]
+    },
+    "剧场任务开始":{
+        "action": "Click",
+        "target": [204, 635, 186,  58],
+        "pre_delay": 1500,
+        "next": [
+            "点赞1"
+        ]
+    },
+    "点赞1":{
+        "recognition": "OCR",
+        "expected": "在这里",
+        "roi": [471, 592, 468, 126],
+        "action": "Click",
+        "target": [1199, 393, 57, 46],
+        "pre_delay": 300,
+        "next":[
+            "点赞2"
+        ]
+    },
+    "点赞2":{
+        "recognition": "OCR",
+        "expected": "在这里",
+        "roi": [471, 592, 468, 126],
+        "action": "Click",
+        "target": [1199, 393, 57, 46],
+        "pre_delay": 300,
+        "next": [
+            "点击输入框"
+        ]
+    },
+    "点击输入框":{
+        "recognition": "OCR",
+        "expected": "在这里",
+        "roi": [471, 592, 468, 126],
+        "target": [471, 592, 468, 126],
+        "action": "Click",
+        "pre_delay": 300,
+        "next":[
+            "评论"
+        ]
+    },
+    "评论":{
+        "recognition": "TemplateMatch",
+        "template": "日常/发送评论.png",
+        "roi": [1123, 0, 157, 141],
+        "action": "InputText",
+        "text": ".",
+        "pre_delay": 1000,
+        "next":[
+            "发送1"
+        ]
+    },
+    "点击输入框1":{
+        "recognition": "OCR",
+        "expected": "在这里",
+        "roi": [471, 592, 468, 126],
+        "target": [471, 592, 468, 126],
+        "action": "Click",
+        "pre_delay": 300,
+        "next":[
+            "评论1"
+        ]
+    },
+    "评论1":{
+        "action": "InputText",
+        "text": "1/",
+        "pre_delay": 800,
+        "focus": "评论123"
+    },
+    "发送1":{
+        "recognition": "TemplateMatch",
+        "template": "日常/发送评论.png",
+        "roi": [1123, 0, 157, 141],
+        "action": "Click",
+        "pre_delay": 500,
+        "next":[
+            "发送2"
+        ]
+    },
+    "发送2":{
+        "recognition": "TemplateMatch",
+        "template": "日常/发送评论.png",
+        "roi": [1123, 0, 157, 141],
+        "action": "Click",
+        "pre_delay": 500,
+        "next":[
+            "剧场任务结束"
+        ]
+    },
+    "剧场任务结束":{
+        "action": "Click",
+        "target": [204, 635, 186,  58],
+        "pre_delay": 300,
+        "next": [
+            "返回剧场"
+        ]
+    },
+    "返回剧场":{
+        "recognition": "TemplateMatch",
+        "template": "日常/箭头2.png",
+        "roi": [0, 0, 136, 147],
+        "action": "Click",
+        "pre_delay": 2000,
+        "post_delay": 2000,
+        "next":[
+            "返回社交"
+        ]
+    },
+    "返回社交":{
+        "recognition": "TemplateMatch",
+        "template": "日常/箭头3.png",
+        "roi": [18, 9, 140, 146],
+        "action": "Click",
+        "pre_wait_freezes": 1000,
+        "next":[
+            "领观影券"
+        ]
+    },
+    "领观影券":{
+        "recognition": "TemplateMatch",
+        "template": "日常/领观影券.png",
+        "roi": [465, 242, 154, 156],
+        "action": "Click",
+        "next":[
+            "返回主界面3"
+        ]
+    },
+    "返回主界面3":{
+        "recognition": "TemplateMatch",
+        "roi": [18, 9, 140, 146],
+        "template":"日常/箭头3.png",
+        "action":"Click"
+    }
+}

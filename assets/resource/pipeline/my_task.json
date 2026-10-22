@@ -1,0 +1,6 @@
+{
+    "HLR_ConnectionCheck": {
+        "recognition": "DirectHit",
+        "action": "DoNothing"
+    }
+}

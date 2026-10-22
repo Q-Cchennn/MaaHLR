@@ -1,120 +1,440 @@
 {
-    "启动应用":{
+    "启动应用": {
         "action": "StartApp",
         "package": "com.netease.skzdhlr.bilibili/com.netease.game.MessiahNativeActivity",
-        "next":[
+        "next": [
             "启动游戏"
         ]
     },
-    "启动游戏":{
-        "reco_timeout": 80000,
-        "next":[
+    "启动游戏": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "timeout": 80000,
+        "next": [
+            "关闭启动活动中心",
+            "关闭启动活动图",
             "sub_隐私政策关闭",
             "sub_断网重连",
             "sub_网易协议关闭",
             "sub_登录账号",
             "sub_公告关闭",
             "sub_开始游戏",
-            "完成启动",
-            "sub_弹窗关闭",
-            "sub_关闭活动",
             "sub_领取签到奖励",
-            "返回主界面1"
+            "完成启动"
         ]
     },
-    "sub_隐私政策关闭":{
-        "is_sub": true,
+    "sub_隐私政策关闭": {
         "recognition": "OCR",
         "expected": "同意",
-        "roi": [686, 499, 55, 35],
+        "roi": [
+            686,
+            499,
+            55,
+            35
+        ],
         "action": "Click",
-        "pre_wait_freezes": 600
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_断网重连":{
-        "is_sub": true,
+    "sub_断网重连": {
         "recognition": "OCR",
         "expected": "确定",
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_网易协议关闭":{
-        "is_sub": true,
+    "sub_网易协议关闭": {
         "recognition": "OCR",
         "expected": "接受",
         "action": "Click",
-        "roi": [734, 605, 71, 37],
-        "pre_wait_freezes": 300
+        "roi": [
+            734,
+            605,
+            71,
+            37
+        ],
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_登录账号":{
-        "is_sub": true,
+    "sub_登录账号": {
         "recognition": "OCR",
         "expected": "登录",
-        "roi": [621, 383, 37, 22],
-        "action": "Click"
+        "roi": [
+            621,
+            383,
+            37,
+            22
+        ],
+        "action": "Click",
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_公告关闭":{
-        "is_sub": true,
+    "sub_公告关闭": {
         "recognition": "OCR",
         "expected": "公告",
-        "roi": [513, 50, 249, 142],
-        "action": "Click"
+        "roi": [
+            513,
+            50,
+            249,
+            142
+        ],
+        "action": "Click",
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_开始游戏":{
-        "is_sub": true,
+    "sub_开始游戏": {
         "recognition": "OCR",
         "expected": "开始",
-        "replace": ["点击", "屏幕"],
-        "roi": [513, 514, 249, 132],
+        "replace": [
+            [
+                "点击",
+                "屏幕"
+            ]
+        ],
+        "roi": [
+            513,
+            514,
+            249,
+            132
+        ],
         "pre_delay": 2000,
-        "action": "Click"
-    },
-    "完成启动": {
-        "recognition": "TemplateMatch",
-        "roi": [424, 374, 185, 175],
-        "template":"日常/笔记.png",
         "action": "Click",
-        "target": [204, 635, 186, 58],
-        "pre_delay": 5000,
-        "pre_wait_freezes": 5000,
-        "post_check": {
-            "pre_wait_freezes": 5000,
-            "recognition": "TemplateMatch",
-            "roi": [424, 374, 185, 175],
-            "template": "日常/笔记.png"
-        },
-        "ignore_error": true
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "sub_弹窗关闭":{
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "roi":[168, 0, 132, 128],
-        "template": "日常/日历.png",
-        "action": "Click",
-        "target": [204, 635, 186, 58]
-    },
-    "sub_关闭活动":{
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "roi": [0, 0, 1280, 720],
-        "template":"日常/叉1.png",
-        "action":"Click",
-        "post_wait_freezes": 1000
-    },
-    "sub_领取签到奖励":{
+    "sub_领取签到奖励": {
         "recognition": "OCR",
         "expected": "恭喜获得",
         "action": "Click",
-        "post_wait_freezes": 800
+        "next": [
+            "启动界面检查"
+        ],
+        "max_hit": 5,
+        "post_delay": 1000
     },
-    "返回主界面1":{
+    "返回主界面1": {
         "recognition": "TemplateMatch",
-        "roi": [0, 0, 145, 130],
-        "template":"日常/箭头1.png",
-        "action":"Click",
+        "roi": [
+            0,
+            0,
+            145,
+            130
+        ],
+        "template": "日常/箭头1.png",
+        "action": "Click",
         "pre_wait_freezes": 2000
     },
-    "sub_关闭应用":{
-        "is_sub": true,
+    "sub_关闭应用": {
         "action": "StopApp",
         "package": "com.netease.skzdhlr.bilibili"
+    },
+    "返回主界面3": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            18,
+            9,
+            140,
+            146
+        ],
+        "template": "日常/箭头3.png",
+        "action": "Click"
+    },
+    "启动界面检查": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "max_hit": 20,
+        "timeout": 10000,
+        "next": [
+            "关闭启动活动中心",
+            "关闭启动活动图",
+            "sub_隐私政策关闭",
+            "sub_断网重连",
+            "sub_网易协议关闭",
+            "sub_登录账号",
+            "sub_公告关闭",
+            "sub_开始游戏",
+            "sub_领取签到奖励",
+            "完成启动"
+        ]
+    },
+    "关闭启动活动图": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_calendar.png",
+                "roi": [
+                    194,
+                    16,
+                    80,
+                    82
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_task.png",
+                "roi": [
+                    587,
+                    607,
+                    88,
+                    100
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    210,
+                    40,
+                    45,
+                    30
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "upper": [
+                    150,
+                    150,
+                    150
+                ],
+                "count": 1200,
+                "connected": false
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    606,
+                    625,
+                    54,
+                    51
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ],
+                "upper": [
+                    150,
+                    150,
+                    150
+                ],
+                "count": 2400,
+                "connected": false
+            }
+        ],
+        "action": "Click",
+        "target": [
+            90,
+            640,
+            30,
+            25
+        ],
+        "pre_delay": 200,
+        "post_delay": 1000,
+        "max_hit": 20,
+        "next": [
+            "启动界面检查"
+        ]
+    },
+    "关闭启动活动中心": {
+        "recognition": "TemplateMatch",
+        "action": "Click",
+        "post_delay": 1000,
+        "max_hit": 5,
+        "next": [
+            "启动界面检查"
+        ],
+        "template": "startup/activity_center_title.png",
+        "roi": [
+            0,
+            0,
+            330,
+            90
+        ],
+        "threshold": 0.9,
+        "target": [
+            52,
+            38,
+            22,
+            22
+        ]
+    },
+    "完成启动": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_calendar.png",
+                "roi": [
+                    194,
+                    16,
+                    80,
+                    82
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_task.png",
+                "roi": [
+                    587,
+                    607,
+                    88,
+                    100
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    210,
+                    40,
+                    45,
+                    30
+                ],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 500,
+                "connected": false
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    606,
+                    625,
+                    54,
+                    51
+                ],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 500,
+                "connected": false
+            }
+        ],
+        "action": "DoNothing",
+        "post_delay": 1200,
+        "max_hit": 5,
+        "next": [
+            "完成启动_确认",
+            "关闭启动活动中心",
+            "关闭启动活动图"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "启动界面检查"
+        ]
+    },
+    "完成启动_确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_calendar.png",
+                "roi": [
+                    194,
+                    16,
+                    80,
+                    82
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "startup/home_task.png",
+                "roi": [
+                    587,
+                    607,
+                    88,
+                    100
+                ],
+                "threshold": 0.82
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    210,
+                    40,
+                    45,
+                    30
+                ],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 500,
+                "connected": false
+            },
+            {
+                "recognition": "ColorMatch",
+                "method": 4,
+                "roi": [
+                    606,
+                    625,
+                    54,
+                    51
+                ],
+                "lower": [
+                    200,
+                    200,
+                    200
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ],
+                "count": 500,
+                "connected": false
+            }
+        ],
+        "action": "DoNothing"
     }
 }
