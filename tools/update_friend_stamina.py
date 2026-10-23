@@ -18,7 +18,7 @@ nodes['点击领取体力'] = {
     'pre_delay': 1000, 'post_delay': 1200,
     'max_hit': 2, 'timeout': 10000,
     'next': ['确认领取成功-好友', '好友赠领已完成'],
-    'on_error': ['确认领取成功-好友', '好友赠领已完成', '好友体力领取重试检查'],
+    'on_error': ['好友体力异常分流'],
 }
 nodes['好友赠领已完成'] = {
     'recognition': 'And',
@@ -29,6 +29,9 @@ nodes['好友赠领已完成'] = {
     'action': 'DoNothing', 'next': ['好友关闭页面'],
 }
 nodes['进入好友']['post_delay'] = 1200
+nodes['好友体力异常分流'] = {
+    'next': ['确认领取成功-好友', '好友赠领已完成', '好友体力领取重试检查'],
+}
 nodes['好友体力领取重试检查'] = {
     'recognition': 'And',
     'all_of': copy.deepcopy(nodes['点击领取体力']['all_of']),
