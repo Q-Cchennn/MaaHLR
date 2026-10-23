@@ -4,8 +4,8 @@ env:
   # 版本控制：
   # - 设置 VERSION 为空字符串时，下载 latest 版本
   # - 设置 VERSION 为具体版本号时（如 v1.2.3），下载指定版本
-  MAAFW_VERSION: ""
-  MFAA_VERSION: ""
+  MAAFW_VERSION: "v5.12.3"
+  MFAA_VERSION: "v2.16.2"
 
 on:
   push:
@@ -72,8 +72,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [win, macos, linux, android]
-        arch: [aarch64, x86_64]
+        os: [win]
+        arch: [x86_64]
       fail-fast: false
 
     steps:
@@ -143,7 +143,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaXXX-${{ matrix.os }}-${{ matrix.arch }}
+          name: MaaHLR-${{ matrix.os }}-${{ matrix.arch }}
           path: "install"
 
   changelog:
@@ -173,7 +173,9 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
 
   release:
-    if: ${{ needs.meta.outputs.is_release == 'true' }}
+    # 2.0 beta uses the locally verified Windows bundle with the title/version
+    # customization. Do not publish unverified CI artifacts over that release.
+    if: false
     needs: [meta, install, changelog]
     runs-on: ubuntu-latest
     steps:

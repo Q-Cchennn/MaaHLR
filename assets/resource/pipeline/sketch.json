@@ -1,0 +1,601 @@
+{
+    "速写": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "速写天体观测题目",
+            "速写架子鼓题目",
+            "速写一键收集",
+            "速写选择男主",
+            "速写点击入口",
+            "速写进入校园"
+        ],
+        "timeout": 10000
+    },
+    "速写进入校园": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "Click",
+        "target": [
+            47,
+            275,
+            2,
+            2
+        ],
+        "pre_delay": 400,
+        "post_delay": 1200,
+        "max_hit": 2,
+        "next": [
+            "速写点击入口",
+            "速写进入校园"
+        ],
+        "timeout": 10000
+    },
+    "速写点击入口": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "校园",
+                "roi": [
+                    110,
+                    10,
+                    180,
+                    80
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "速写",
+                "roi": [
+                    800,
+                    600,
+                    150,
+                    120
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 1000,
+        "max_hit": 1,
+        "next": [
+            "速写一键收集",
+            "速写选择男主"
+        ],
+        "timeout": 10000
+    },
+    "速写选择男主": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "校园",
+                "roi": [
+                    110,
+                    10,
+                    180,
+                    80
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "退出速写",
+                "roi": [
+                    1090,
+                    640,
+                    190,
+                    80
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "速写/艾因.png",
+                "roi": [
+                    0,
+                    85,
+                    1280,
+                    545
+                ],
+                "threshold": 0.85
+            }
+        ],
+        "box_index": 2,
+        "action": "Click",
+        "pre_delay": 400,
+        "post_delay": 1500,
+        "max_hit": 1,
+        "next": [
+            "速写一键收集"
+        ],
+        "timeout": 15000
+    },
+    "速写一键收集": {
+        "recognition": "OCR",
+        "expected": "一?键收集",
+        "roi": [
+            1010,
+            40,
+            250,
+            130
+        ],
+        "action": "Click",
+        "pre_delay": 500,
+        "post_delay": 1200,
+        "max_hit": 1,
+        "timeout": 20000,
+        "next": [
+            "速写架子鼓题目",
+            "速写天体观测题目"
+        ]
+    },
+    "速写架子鼓题目": {
+        "recognition": "OCR",
+        "expected": "架子鼓鼓手",
+        "roi": [
+            0,
+            20,
+            700,
+            90
+        ],
+        "action": "DoNothing",
+        "next": [
+            "速写清除旧连线",
+            "速写灵感音符"
+        ],
+        "timeout": 10000
+    },
+    "速写清除旧连线": {
+        "recognition": "OCR",
+        "expected": "重.*画",
+        "roi": [
+            260,
+            620,
+            300,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "速写灵感音符"
+        ],
+        "timeout": 5000
+    },
+    "速写灵感音符": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/音符.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写灵感鼓"
+        ]
+    },
+    "速写灵感鼓": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/鼓.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写灵感手臂"
+        ]
+    },
+    "速写灵感手臂": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/手臂.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写架子鼓连线"
+        ]
+    },
+    "速写灵感星星": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/星星.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写灵感土星"
+        ]
+    },
+    "速写灵感土星": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/土星.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写灵感放大镜"
+        ]
+    },
+    "速写灵感放大镜": {
+        "recognition": "TemplateMatch",
+        "template": "速写/灵感/放大镜.png",
+        "roi": [
+            100,
+            130,
+            1100,
+            480
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "速写天体观测连线"
+        ]
+    },
+    "速写架子鼓连线": {
+        "recognition": "OCR",
+        "expected": "架子鼓鼓手",
+        "roi": [
+            0,
+            20,
+            700,
+            90
+        ],
+        "action": "Swipe",
+        "begin": "速写灵感音符",
+        "end": [
+            "速写灵感鼓",
+            "速写灵感手臂"
+        ],
+        "duration": [
+            700,
+            700
+        ],
+        "end_hold": 200,
+        "post_delay": 800,
+        "max_hit": 1,
+        "next": [
+            "速写架子鼓确认"
+        ],
+        "timeout": 5000
+    },
+    "速写架子鼓确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "架子鼓鼓手",
+                "roi": [
+                    0,
+                    20,
+                    700,
+                    90
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "确.*定",
+                "roi": [
+                    730,
+                    620,
+                    300,
+                    90
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 1500,
+        "max_hit": 1,
+        "next": [
+            "速写结果退出"
+        ],
+        "timeout": 30000
+    },
+    "速写天体观测题目": {
+        "recognition": "OCR",
+        "expected": "天体观测",
+        "roi": [
+            0,
+            20,
+            700,
+            90
+        ],
+        "action": "DoNothing",
+        "next": [
+            "速写天体观测重画",
+            "速写灵感星星"
+        ],
+        "timeout": 10000
+    },
+    "速写天体观测重画": {
+        "recognition": "OCR",
+        "expected": "重.*画",
+        "roi": [
+            260,
+            620,
+            300,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "速写灵感星星"
+        ],
+        "timeout": 5000
+    },
+    "速写天体观测连线": {
+        "recognition": "OCR",
+        "expected": "天体观测",
+        "roi": [
+            0,
+            20,
+            700,
+            90
+        ],
+        "action": "Swipe",
+        "begin": "速写灵感星星",
+        "end": [
+            "速写灵感土星",
+            "速写灵感放大镜"
+        ],
+        "duration": [
+            700,
+            700
+        ],
+        "end_hold": 200,
+        "post_delay": 800,
+        "max_hit": 1,
+        "next": [
+            "速写天体观测确认"
+        ],
+        "timeout": 5000
+    },
+    "速写天体观测确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "天体观测",
+                "roi": [
+                    0,
+                    20,
+                    700,
+                    90
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "确.*定",
+                "roi": [
+                    730,
+                    620,
+                    300,
+                    90
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 1500,
+        "max_hit": 1,
+        "next": [
+            "速写结果退出"
+        ],
+        "timeout": 30000
+    },
+    "速写结果退出": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "速写结果",
+                "roi": [
+                    420,
+                    120,
+                    450,
+                    120
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "点击屏幕退出",
+                "roi": [
+                    420,
+                    590,
+                    450,
+                    100
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            630,
+            635,
+            2,
+            2
+        ],
+        "pre_delay": 600,
+        "post_delay": 1200,
+        "max_hit": 2,
+        "next": [
+            "速写赠送选择第一位",
+            "完成启动_确认",
+            "速写结果退出",
+            "速写校园返回主页",
+            "速写离开场景"
+        ],
+        "timeout": 15000
+    },
+    "速写赠送选择第一位": {
+        "recognition": "OCR",
+        "expected": "速写赠送",
+        "roi": [
+            420,
+            120,
+            450,
+            120
+        ],
+        "action": "Click",
+        "target": [
+            430,
+            290,
+            2,
+            2
+        ],
+        "pre_delay": 400,
+        "post_delay": 600,
+        "max_hit": 1,
+        "next": [
+            "速写点击赠送"
+        ],
+        "timeout": 10000
+    },
+    "速写点击赠送": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "速写赠送",
+                "roi": [
+                    420,
+                    120,
+                    450,
+                    120
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "赠.*送",
+                "roi": [
+                    520,
+                    480,
+                    230,
+                    100
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": [
+            640,
+            520,
+            2,
+            2
+        ],
+        "pre_delay": 400,
+        "post_delay": 1500,
+        "max_hit": 1,
+        "next": [
+            "完成启动_确认",
+            "速写校园返回主页",
+            "速写赠送后离开场景",
+            "速写离开场景"
+        ],
+        "timeout": 15000
+    },
+    "速写赠送后离开场景": {
+        "recognition": "OCR",
+        "expected": "速写",
+        "roi": [
+            1120,
+            600,
+            160,
+            120
+        ],
+        "action": "Click",
+        "target": [
+            63,
+            45,
+            2,
+            2
+        ],
+        "pre_delay": 500,
+        "post_delay": 1200,
+        "max_hit": 3,
+        "next": [
+            "完成启动_确认",
+            "速写校园返回主页",
+            "速写赠送后离开场景"
+        ],
+        "timeout": 10000
+    },
+    "速写离开场景": {
+        "recognition": "OCR",
+        "expected": "一?键收集",
+        "roi": [
+            1010,
+            40,
+            250,
+            130
+        ],
+        "action": "Click",
+        "target": [
+            63,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1200,
+        "max_hit": 2,
+        "next": [
+            "完成启动_确认",
+            "速写校园返回主页",
+            "速写离开场景"
+        ],
+        "timeout": 10000
+    },
+    "速写校园返回主页": {
+        "recognition": "OCR",
+        "expected": "校园",
+        "roi": [
+            110,
+            10,
+            180,
+            80
+        ],
+        "action": "Click",
+        "target": [
+            63,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1200,
+        "max_hit": 2,
+        "next": [
+            "完成启动_确认",
+            "速写校园返回主页"
+        ],
+        "timeout": 10000
+    }
+}

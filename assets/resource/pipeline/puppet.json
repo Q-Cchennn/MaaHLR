@@ -1,0 +1,592 @@
+{
+    "手偶剧场": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "timeout": 8000,
+        "next": [
+            "手偶剧场社交入口",
+            "手偶剧场打开作品",
+            "手偶剧场热门加载完成"
+        ]
+    },
+    "手偶剧场社交入口": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认",
+            {
+                "recognition": "OCR",
+                "expected": "社交",
+                "roi": [
+                    690,
+                    460,
+                    160,
+                    85
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 1200,
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场打开作品"
+        ]
+    },
+    "手偶剧场打开作品": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "观影券",
+                "roi": [
+                    160,
+                    185,
+                    180,
+                    80
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "观看一次他人的视频|点赞一次他人的视频|评论一次他人的视频",
+                "roi": [
+                    160,
+                    350,
+                    460,
+                    230
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            607,
+            385,
+            35,
+            35
+        ],
+        "post_delay": 2000,
+        "max_hit": 1,
+        "timeout": 30000,
+        "next": [
+            "手偶剧场热门加载完成"
+        ]
+    },
+    "手偶剧场热门加载完成": {
+        "recognition": "OCR",
+        "expected": "热门剧场",
+        "roi": [
+            150,
+            105,
+            220,
+            65
+        ],
+        "action": "Click",
+        "target": [
+            560,
+            200,
+            200,
+            150
+        ],
+        "post_delay": 3500,
+        "max_hit": 1,
+        "timeout": 60000,
+        "next": [
+            "手偶剧场显示控制栏"
+        ]
+    },
+    "手偶剧场显示控制栏": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            590,
+            555,
+            100,
+            55
+        ],
+        "post_delay": 500,
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场暂停视频"
+        ]
+    },
+    "手偶剧场暂停视频": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            470,
+            610,
+            650,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            40,
+            635,
+            35,
+            40
+        ],
+        "post_delay": 600,
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场点赞第一次"
+        ]
+    },
+    "手偶剧场点赞第一次": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            470,
+            610,
+            650,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            1216,
+            402,
+            22,
+            22
+        ],
+        "post_delay": 400,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场点赞第二次"
+        ]
+    },
+    "手偶剧场点赞第二次": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            470,
+            610,
+            650,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            1216,
+            402,
+            22,
+            22
+        ],
+        "post_delay": 500,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场打开留言"
+        ]
+    },
+    "手偶剧场打开留言": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            470,
+            610,
+            650,
+            90
+        ],
+        "action": "Click",
+        "target": [
+            550,
+            635,
+            400,
+            35
+        ],
+        "post_delay": 800,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场输入留言"
+        ]
+    },
+    "手偶剧场输入留言": {
+        "recognition": "TemplateMatch",
+        "template": "手偶剧场/发送纸飞机.png",
+        "roi": [
+            1170,
+            10,
+            110,
+            110
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "target": [
+            250,
+            57,
+            2,
+            2
+        ],
+        "post_delay": 1200,
+        "max_hit": 2,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场填写句号"
+        ]
+    },
+    "手偶剧场填写句号": {
+        "recognition": "DirectHit",
+        "action": "InputText",
+        "input_text": ".",
+        "pre_delay": 500,
+        "post_delay": 1200,
+        "max_hit": 2,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场检查留言"
+        ]
+    },
+    "手偶剧场检查留言": {
+        "recognition": "TemplateMatch",
+        "template": "手偶剧场/发送纸飞机.png",
+        "roi": [
+            1170,
+            10,
+            110,
+            110
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "timeout": 8000,
+        "next": [
+            "手偶剧场留言仍为空",
+            "手偶剧场留言已填写"
+        ]
+    },
+    "手偶剧场留言仍为空": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            110,
+            25,
+            900,
+            70
+        ],
+        "action": "Click",
+        "target": [
+            250,
+            57,
+            2,
+            2
+        ],
+        "post_delay": 1000,
+        "max_hit": 1,
+        "timeout": 5000,
+        "next": [
+            "手偶剧场按键输入句号"
+        ]
+    },
+    "手偶剧场按键输入句号": {
+        "recognition": "DirectHit",
+        "action": "Shell",
+        "cmd": "input text .",
+        "shell_timeout": 5000,
+        "post_delay": 1200,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场检查留言"
+        ]
+    },
+    "手偶剧场留言已填写": {
+        "recognition": "OCR",
+        "expected": "在这里留下|想说的话",
+        "roi": [
+            110,
+            25,
+            900,
+            70
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "timeout": 5000,
+        "next": [
+            "手偶剧场发送留言"
+        ]
+    },
+    "手偶剧场发送留言": {
+        "recognition": "TemplateMatch",
+        "template": "手偶剧场/发送纸飞机.png",
+        "roi": [
+            1170,
+            10,
+            110,
+            110
+        ],
+        "threshold": 0.8,
+        "action": "Click",
+        "target": [
+            1227,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1500,
+        "pre_delay": 500,
+        "max_hit": 3,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场发送后检查"
+        ]
+    },
+    "手偶剧场发送后检查": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "timeout": 8000,
+        "next": [
+            "手偶剧场留言编辑已关闭",
+            "手偶剧场发送留言"
+        ]
+    },
+    "手偶剧场留言编辑已关闭": {
+        "recognition": "TemplateMatch",
+        "template": "手偶剧场/发送纸飞机.png",
+        "roi": [
+            1170,
+            10,
+            110,
+            110
+        ],
+        "threshold": 0.8,
+        "inverse": true,
+        "action": "DoNothing",
+        "post_delay": 500,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场返回视频列表"
+        ]
+    },
+    "手偶剧场返回视频列表": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            39,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1000,
+        "max_hit": 5,
+        "timeout": 15000,
+        "next": [
+            "手偶剧场返回社交",
+            "手偶剧场结束页返回",
+            "手偶剧场重新显示控制栏"
+        ]
+    },
+    "手偶剧场结束页返回": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "重播",
+                "roi": [
+                    780,
+                    335,
+                    130,
+                    90
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "下一个",
+                "roi": [
+                    880,
+                    335,
+                    150,
+                    90
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            39,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1200,
+        "max_hit": 3,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场返回社交",
+            "手偶剧场结束页返回"
+        ]
+    },
+    "手偶剧场重新显示控制栏": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            590,
+            555,
+            100,
+            55
+        ],
+        "post_delay": 500,
+        "max_hit": 2,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场返回视频列表"
+        ]
+    },
+    "手偶剧场返回社交": {
+        "recognition": "OCR",
+        "expected": "热门剧场",
+        "roi": [
+            150,
+            105,
+            220,
+            65
+        ],
+        "action": "Click",
+        "target": [
+            70,
+            55,
+            30,
+            45
+        ],
+        "post_delay": 1000,
+        "max_hit": 1,
+        "timeout": 15000,
+        "next": [
+            "手偶剧场完成"
+        ]
+    },
+    "手偶剧场完成": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "观影券",
+                "roi": [
+                    160,
+                    185,
+                    180,
+                    80
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "观看一次他人的视频|点赞一次他人的视频|评论一次他人的视频",
+                "roi": [
+                    160,
+                    350,
+                    460,
+                    230
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            520,
+            295,
+            45,
+            45
+        ],
+        "post_delay": 1200,
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "手偶剧场观影券奖励确认",
+            "手偶剧场观影券奖励关闭",
+            "手偶剧场退出社交"
+        ]
+    },
+    "手偶剧场观影券奖励确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "恭喜获得|领取成功|获得奖励",
+                "roi": [
+                    250,
+                    65,
+                    800,
+                    300
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^确认$|^确定$",
+                "roi": [
+                    300,
+                    450,
+                    700,
+                    220
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 1000,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场退出社交"
+        ]
+    },
+    "手偶剧场观影券奖励关闭": {
+        "recognition": "OCR",
+        "expected": "恭喜获得|领取成功|获得奖励",
+        "roi": [
+            250,
+            65,
+            800,
+            300
+        ],
+        "action": "Click",
+        "target": [
+            1100,
+            620,
+            40,
+            35
+        ],
+        "post_delay": 1000,
+        "max_hit": 1,
+        "timeout": 8000,
+        "next": [
+            "手偶剧场退出社交"
+        ]
+    },
+    "手偶剧场退出社交": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "观影券",
+                "roi": [
+                    160,
+                    185,
+                    180,
+                    80
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "观看一次他人的视频|点赞一次他人的视频|评论一次他人的视频",
+                "roi": [
+                    160,
+                    350,
+                    460,
+                    230
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            70,
+            55,
+            30,
+            45
+        ],
+        "post_delay": 1200,
+        "max_hit": 3,
+        "timeout": 10000,
+        "next": [
+            "完成启动_确认",
+            "手偶剧场退出社交"
+        ]
+    }
+}

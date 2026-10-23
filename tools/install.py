@@ -13,6 +13,8 @@ except ModuleNotFoundError as e:
     ) from e
 
 from configure import configure_ocr_model
+from task_descriptions import apply_descriptions
+from default_daily_config import configure_defaults, seed_config
 
 
 working_dir = Path(__file__).parent.parent.resolve()
@@ -117,12 +119,20 @@ def install_resource():
         interface = jsonc.load(f)
 
     interface["version"] = version
+    apply_descriptions(interface)
+    configure_defaults(interface)
+    if os_name != 'android':
+        interface['custom_title'] = interface.get('label', interface['name'])
+        seed_config(install_path, interface)
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)
 
 
 def install_chores():
+    shutil.copy2(working_dir / 'assets/announcement.md', install_path / 'announcement.md')
+    shutil.copy2(working_dir / 'assets/logo.ico', install_path / 'logo.ico')
+    shutil.copy2(working_dir / 'assets/logo-conch-transparent.png', install_path / 'logo.png')
     shutil.copy2(
         working_dir / "README.md",
         install_path,

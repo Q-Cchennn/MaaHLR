@@ -3,6 +3,8 @@
         "recognition": "DirectHit",
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日点击清单",
             "假日主页检查"
         ],
@@ -15,6 +17,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日主页入口",
             "假日入口缺失待确认"
         ],
@@ -33,6 +37,8 @@
         "post_delay": 700,
         "max_hit": 1,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日点击清单"
         ],
         "timeout": 5000,
@@ -56,6 +62,8 @@
         "action": "DoNothing",
         "post_delay": 700,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日入口缺失主页复核"
         ],
         "timeout": 3000
@@ -67,6 +75,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日主页入口",
             "假日入口缺失结束"
         ],
@@ -113,6 +123,8 @@
         "post_delay": 600,
         "max_hit": 1,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日清单无奖励",
             "假日清单一键领取"
         ],
@@ -163,6 +175,8 @@
         "post_delay": 600,
         "max_hit": 1,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日清单奖励弹窗",
             "假日清单没有可领取奖励提示",
             "假日清单领取后检查"
@@ -199,6 +213,8 @@
         "post_delay": 600,
         "max_hit": 3,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日清单奖励弹窗",
             "假日清单领取后检查"
         ],
@@ -230,6 +246,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日点击计划"
         ],
         "timeout": 5000
@@ -260,13 +278,17 @@
         ],
         "box_index": 1,
         "action": "Click",
-        "post_delay": 600,
-        "max_hit": 1,
+        "post_delay": 1000,
+        "max_hit": 3,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日计划无奖励",
-            "假日计划一键领取"
+            "假日计划一键领取",
+            "假日切换计划重试"
         ],
-        "timeout": 5000
+        "timeout": 8000,
+        "pre_delay": 600
     },
     "假日计划一键领取": {
         "recognition": "And",
@@ -313,6 +335,8 @@
         "post_delay": 600,
         "max_hit": 1,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日计划奖励弹窗",
             "假日计划没有可领取奖励提示",
             "假日计划领取后检查"
@@ -349,6 +373,8 @@
         "post_delay": 600,
         "max_hit": 3,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日计划奖励弹窗",
             "假日计划领取后检查"
         ],
@@ -380,6 +406,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日返回主页"
         ],
         "timeout": 5000
@@ -395,17 +423,21 @@
         "expected": "假日",
         "action": "Click",
         "target": [
-            40,
-            25,
-            40,
-            35
+            63,
+            50,
+            2,
+            2
         ],
-        "post_delay": 700,
-        "max_hit": 1,
+        "post_delay": 1000,
+        "max_hit": 3,
         "next": [
-            "假日返回主页确认"
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
+            "假日返回主页确认",
+            "假日返回主页"
         ],
-        "timeout": 5000
+        "timeout": 5000,
+        "pre_delay": 400
     },
     "假日返回主页确认": {
         "recognition": "And",
@@ -466,6 +498,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日点击计划"
         ],
         "timeout": 5000
@@ -482,6 +516,8 @@
         "action": "DoNothing",
         "post_delay": 800,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日清单领取后检查"
         ],
         "timeout": 5000
@@ -538,6 +574,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日返回主页"
         ],
         "timeout": 5000
@@ -554,7 +592,94 @@
         "action": "DoNothing",
         "post_delay": 800,
         "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
             "假日计划领取后检查"
+        ],
+        "timeout": 5000
+    },
+    "假日过渡奖励确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    350,
+                    65,
+                    550,
+                    120
+                ],
+                "expected": "恭喜获得|获得奖励"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    330,
+                    535,
+                    245,
+                    90
+                ],
+                "expected": "确认"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 1000,
+        "max_hit": 6,
+        "timeout": 5000
+    },
+    "假日过渡奖励关闭": {
+        "recognition": "OCR",
+        "roi": [
+            300,
+            55,
+            650,
+            160
+        ],
+        "expected": "恭喜获得|领取成功|获得奖励",
+        "action": "Click",
+        "target": [
+            650,
+            660,
+            30,
+            25
+        ],
+        "pre_delay": 300,
+        "post_delay": 1000,
+        "max_hit": 6
+    },
+    "假日切换计划重试": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "假日"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    410,
+                    190,
+                    830,
+                    380
+                ],
+                "expected": "每日清单|每周清单"
+            }
+        ],
+        "action": "DoNothing",
+        "post_delay": 700,
+        "max_hit": 2,
+        "next": [
+            "[JumpBack]假日过渡奖励确认",
+            "[JumpBack]假日过渡奖励关闭",
+            "假日点击计划"
         ],
         "timeout": 5000
     }

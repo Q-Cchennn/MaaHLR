@@ -1,0 +1,116 @@
+{
+    "领取邮件": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "邮件全部领取并已读",
+            "邮件主页入口"
+        ],
+        "timeout": 8000
+    },
+    "邮件主页入口": {
+        "recognition": "And",
+        "all_of": [
+            "完成启动_确认"
+        ],
+        "action": "Click",
+        "target": [
+            145,
+            55,
+            2,
+            2
+        ],
+        "post_delay": 1300,
+        "max_hit": 1,
+        "next": [
+            "邮件全部领取并已读"
+        ],
+        "timeout": 10000
+    },
+    "邮件全部领取并已读": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "邮件",
+                "roi": [
+                    110,
+                    10,
+                    200,
+                    85
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "全部领取|全部领|并已读",
+                "roi": [
+                    1130,
+                    460,
+                    150,
+                    150
+                ]
+            }
+        ],
+        "action": "Click",
+        "target": [
+            1215,
+            545,
+            2,
+            2
+        ],
+        "pre_delay": 600,
+        "post_delay": 1500,
+        "max_hit": 1,
+        "next": [
+            "[JumpBack]今日任务奖励确认",
+            "[JumpBack]今日任务奖励关闭",
+            "邮件领取后检查"
+        ],
+        "timeout": 10000
+    },
+    "邮件领取后检查": {
+        "recognition": "OCR",
+        "expected": "邮件",
+        "roi": [
+            110,
+            10,
+            200,
+            85
+        ],
+        "action": "DoNothing",
+        "post_delay": 800,
+        "next": [
+            "[JumpBack]今日任务奖励确认",
+            "[JumpBack]今日任务奖励关闭",
+            "邮件返回主页"
+        ],
+        "timeout": 10000
+    },
+    "邮件返回主页": {
+        "recognition": "OCR",
+        "expected": "邮件",
+        "roi": [
+            110,
+            10,
+            200,
+            85
+        ],
+        "action": "Click",
+        "target": [
+            63,
+            45,
+            2,
+            2
+        ],
+        "pre_delay": 300,
+        "post_delay": 1000,
+        "max_hit": 3,
+        "next": [
+            "[JumpBack]今日任务奖励确认",
+            "[JumpBack]今日任务奖励关闭",
+            "完成启动_确认",
+            "邮件返回主页"
+        ],
+        "timeout": 8000
+    }
+}

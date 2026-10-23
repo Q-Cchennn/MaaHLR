@@ -1,6 +1,7 @@
 {
     "出行": {
         "next": [
+            "出行门口有人过渡页",
             "确定人物",
             "人物选择",
             "出行选择",
@@ -12,30 +13,47 @@
         "timeout": 8000
     },
     "进入出行": {
-        "recognition": "TemplateMatch",
-        "template": "日常/主页出行入口.png",
-        "roi": [
-            10,
-            345,
-            110,
-            125
-        ],
-        "threshold": 0.9,
+        "recognition": "Or",
         "action": "Click",
         "target": [
-            35,
+            40,
             375,
-            50,
-            50
+            40,
+            45
         ],
-        "post_delay": 900,
-        "timeout": 5000,
+        "post_delay": 1200,
+        "timeout": 8000,
         "max_hit": 1,
         "next": [
+            "出行门口有人过渡页",
             "确定人物",
             "人物选择",
             "出行选择"
-        ]
+        ],
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    10,
+                    350,
+                    130,
+                    130
+                ],
+                "expected": "出行"
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "日常/主页出行入口.png",
+                "roi": [
+                    10,
+                    345,
+                    130,
+                    140
+                ],
+                "threshold": 0.84
+            }
+        ],
+        "pre_delay": 600
     },
     "出行选择": {
         "recognition": "OCR",
@@ -49,6 +67,7 @@
         "action": "Click",
         "pre_delay": 1000,
         "next": [
+            "出行门口有人过渡页",
             "确定人物",
             "人物选择"
         ],
@@ -251,6 +270,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
             "出行好感已达上限",
             "出行点击人物互动",
             "出行无互动提示",
@@ -367,13 +388,16 @@
             40,
             35
         ],
-        "pre_delay": 200,
-        "post_delay": 700,
+        "pre_delay": 1000,
+        "post_delay": 1000,
         "next": [
-            "出行返回主页确认"
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
+            "出行返回主页确认",
+            "出行返回主页"
         ],
-        "timeout": 5000,
-        "max_hit": 1
+        "timeout": 8000,
+        "max_hit": 3
     },
     "出行返回主页确认": {
         "recognition": "And",
@@ -408,6 +432,8 @@
         ],
         "action": "DoNothing",
         "next": [
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
             "出行返回主页"
         ],
         "timeout": 5000
@@ -444,9 +470,11 @@
             120
         ],
         "pre_delay": 200,
-        "post_delay": 700,
+        "post_delay": 1200,
         "max_hit": 8,
         "next": [
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
             "出行好感已达上限",
             "出行点击人物互动",
             "出行无互动提示",
@@ -467,6 +495,8 @@
         "action": "DoNothing",
         "post_delay": 700,
         "next": [
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
             "出行无互动提示复核"
         ],
         "timeout": 5000
@@ -482,6 +512,8 @@
         "expected": "课后出行",
         "action": "DoNothing",
         "next": [
+            "[JumpBack]出行奖励点击确认",
+            "[JumpBack]出行奖励点击空白",
             "出行好感已达上限",
             "出行点击人物互动",
             "出行返回主页"
@@ -536,5 +568,97 @@
             "返回人物"
         ],
         "timeout": 5000
+    },
+    "出行门口有人过渡页": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    95,
+                    10,
+                    330,
+                    80
+                ],
+                "expected": "课后出行"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    400,
+                    310,
+                    500,
+                    100
+                ],
+                "expected": "家门口.*有人找你|似乎有人找你"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            600,
+            525,
+            80,
+            50
+        ],
+        "pre_delay": 400,
+        "post_delay": 1000,
+        "max_hit": 2,
+        "next": [
+            "出行门口有人过渡页",
+            "确定人物",
+            "人物选择",
+            "出行选择"
+        ],
+        "timeout": 10000
+    },
+    "出行奖励点击确认": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    200,
+                    65,
+                    900,
+                    500
+                ],
+                "expected": "领取成功|恭喜获得"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    350,
+                    450,
+                    600,
+                    220
+                ],
+                "expected": "^确认$|^确定$"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 300,
+        "post_delay": 1000,
+        "max_hit": 4
+    },
+    "出行奖励点击空白": {
+        "recognition": "OCR",
+        "roi": [
+            200,
+            65,
+            900,
+            500
+        ],
+        "expected": "领取成功|恭喜获得",
+        "action": "Click",
+        "target": [
+            1100,
+            500,
+            40,
+            30
+        ],
+        "pre_delay": 300,
+        "post_delay": 1000,
+        "max_hit": 4
     }
 }

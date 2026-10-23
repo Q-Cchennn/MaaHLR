@@ -49,10 +49,10 @@
     "选择画灵": {
         "action": "Click",
         "target": [
-            1052,
-            185,
-            80,
-            49
+            165,
+            190,
+            90,
+            60
         ],
         "pre_wait_freezes": 300,
         "next": [
@@ -297,9 +297,101 @@
         "action": "Click",
         "pre_delay": 200,
         "post_delay": 500,
-        "max_hit": 2,
+        "max_hit": 102,
         "next": [
-            "点击培养"
+            "画灵等级已满换下一张",
+            "点击培养",
+            "画灵满级搜索结束"
+        ],
+        "timeout": 5000
+    },
+    "画灵详情页标识": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    530,
+                    40,
+                    150,
+                    60
+                ],
+                "expected": "资料"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    710,
+                    40,
+                    160,
+                    60
+                ],
+                "expected": "能力"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    880,
+                    40,
+                    180,
+                    60
+                ],
+                "expected": "追忆"
+            }
+        ],
+        "action": "DoNothing"
+    },
+    "画灵等级已满换下一张": {
+        "recognition": "And",
+        "all_of": [
+            "画灵详情页标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1000,
+                    150,
+                    230,
+                    150
+                ],
+                "expected": "等级已满"
+            }
+        ],
+        "action": "Click",
+        "target": [
+            1210,
+            335,
+            30,
+            45
+        ],
+        "pre_delay": 300,
+        "post_delay": 800,
+        "max_hit": 100,
+        "next": [
+            "画灵等级已满换下一张",
+            "点击培养",
+            "画灵满级搜索结束",
+            "画灵进入能力"
+        ],
+        "timeout": 5000
+    },
+    "画灵满级搜索结束": {
+        "recognition": "And",
+        "all_of": [
+            "画灵详情页标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1000,
+                    150,
+                    230,
+                    150
+                ],
+                "expected": "等级已满"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "等级提升"
         ],
         "timeout": 5000
     }

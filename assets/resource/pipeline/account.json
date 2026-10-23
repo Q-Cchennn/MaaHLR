@@ -1,0 +1,121 @@
+{
+    "账号选择等待登录记录": {
+        "recognition": "And",
+        "all_of": [
+            "B服登录记录标识"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "账号核对并登录",
+            "账号展开登录记录",
+            "账号选择目标"
+        ],
+        "timeout": 5000
+    },
+    "B服登录记录标识": {
+        "recognition": "OCR",
+        "roi": [
+            525,
+            210,
+            255,
+            65
+        ],
+        "expected": "登录记录",
+        "action": "DoNothing"
+    },
+    "账号展开登录记录": {
+        "recognition": "And",
+        "all_of": [
+            "B服登录记录标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    480,
+                    365,
+                    335,
+                    85
+                ],
+                "expected": "^登录$"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    530,
+                    275,
+                    215,
+                    70
+                ],
+                "expected": "[^ ]{2,}"
+            }
+        ],
+        "box_index": 2,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "max_hit": 1,
+        "next": [
+            "账号选择目标"
+        ],
+        "timeout": 5000
+    },
+    "账号选择目标": {
+        "recognition": "And",
+        "all_of": [
+            "B服登录记录标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    530,
+                    270,
+                    215,
+                    195
+                ],
+                "expected": "请填写已保存账号昵称"
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 500,
+        "max_hit": 1,
+        "next": [
+            "账号核对并登录"
+        ],
+        "timeout": 5000
+    },
+    "账号核对并登录": {
+        "recognition": "And",
+        "all_of": [
+            "B服登录记录标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    530,
+                    275,
+                    215,
+                    70
+                ],
+                "expected": "请填写已保存账号昵称"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    480,
+                    365,
+                    335,
+                    85
+                ],
+                "expected": "^登录$"
+            }
+        ],
+        "box_index": 2,
+        "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 1000,
+        "max_hit": 1,
+        "next": [
+            "启动游戏"
+        ],
+        "timeout": 5000
+    }
+}

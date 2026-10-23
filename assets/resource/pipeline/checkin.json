@@ -22,13 +22,10 @@
         "action": "Click",
         "pre_wait_freezes": 200,
         "next": [
-            "确认领取成功-签到",
-            "检测弹窗",
-            "签到今日已领取",
-            "签到今日可领取",
-            "进入签到"
+            "签到切换左侧签到"
         ],
-        "timeout": 5000
+        "timeout": 5000,
+        "post_delay": 1000
     },
     "进入签到": {
         "recognition": "OCR",
@@ -55,12 +52,39 @@
         "next": [
             "签到状态复核"
         ],
-        "expected": "恭喜获得"
+        "expected": "恭喜获得",
+        "post_delay": 500,
+        "timeout": 5000
     },
     "检测弹窗": {
-        "recognition": "OCR",
-        "expected": "直接领取",
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    280,
+                    300,
+                    730,
+                    100
+                ],
+                "expected": "月卡|签到奖励双倍"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    350,
+                    425,
+                    225,
+                    100
+                ],
+                "expected": "直接领取"
+            }
+        ],
+        "box_index": 1,
         "action": "Click",
+        "pre_delay": 200,
+        "post_delay": 600,
+        "max_hit": 1,
         "next": [
             "确认领取成功-签到",
             "签到今日已领取"
@@ -198,19 +222,33 @@
         "timeout": 5000
     },
     "签到关闭页面": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            145,
-            130
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    10,
+                    130,
+                    90,
+                    160
+                ],
+                "expected": "签到"
+            }
         ],
-        "template": "日常/箭头1.png",
         "action": "Click",
+        "target": [
+            45,
+            25,
+            35,
+            35
+        ],
         "pre_delay": 200,
-        "post_delay": 500,
+        "post_delay": 800,
+        "max_hit": 3,
         "next": [
-            "签到返回主页确认"
+            "签到返回主页确认",
+            "签到关闭页面"
         ],
         "timeout": 5000
     },
@@ -220,5 +258,44 @@
             "完成启动_确认"
         ],
         "action": "DoNothing"
+    },
+    "签到切换左侧签到": {
+        "recognition": "OCR",
+        "expected": "^签$|签到",
+        "roi": [
+            15,
+            140,
+            75,
+            135
+        ],
+        "action": "Click",
+        "target": [
+            48,
+            215,
+            2,
+            2
+        ],
+        "pre_delay": 600,
+        "post_delay": 900,
+        "max_hit": 3,
+        "next": [
+            "签到页签已打开",
+            "签到切换左侧签到"
+        ],
+        "timeout": 8000
+    },
+    "签到页签已打开": {
+        "recognition": "And",
+        "all_of": [
+            "签到页面标识"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "确认领取成功-签到",
+            "检测弹窗",
+            "签到今日已领取",
+            "签到今日可领取"
+        ],
+        "timeout": 8000
     }
 }

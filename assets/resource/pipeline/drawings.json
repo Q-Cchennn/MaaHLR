@@ -127,23 +127,42 @@
         "post_delay": 500,
         "next": [
             "绘卷等级已满",
-            "绘卷点击培养"
+            "绘卷点击培养",
+            "绘卷满级搜索结束"
         ],
         "timeout": 5000,
-        "max_hit": 2
+        "max_hit": 102
     },
     "绘卷等级已满": {
-        "recognition": "OCR",
-        "expected": "等级已满",
-        "roi": [
-            1000,
-            150,
-            230,
-            150
+        "recognition": "And",
+        "all_of": [
+            "绘卷详情页标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1000,
+                    150,
+                    230,
+                    150
+                ],
+                "expected": "等级已满"
+            }
         ],
-        "action": "DoNothing",
+        "action": "Click",
+        "target": [
+            1210,
+            335,
+            30,
+            45
+        ],
+        "pre_delay": 300,
+        "post_delay": 800,
+        "max_hit": 100,
         "next": [
-            "等级提升"
+            "绘卷等级已满",
+            "绘卷点击培养",
+            "绘卷满级搜索结束",
+            "绘卷进入能力"
         ],
         "timeout": 5000
     },
@@ -159,7 +178,6 @@
         "action": "Click",
         "pre_delay": 300,
         "next": [
-            "绘卷等级已满",
             "绘卷点击提升"
         ],
         "post_delay": 500,
@@ -182,6 +200,53 @@
         ],
         "post_delay": 1000,
         "max_hit": 1,
+        "timeout": 5000
+    },
+    "绘卷详情页标识": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "roi": [
+                    650,
+                    50,
+                    150,
+                    70
+                ],
+                "expected": "资料"
+            },
+            {
+                "recognition": "OCR",
+                "roi": [
+                    810,
+                    50,
+                    170,
+                    70
+                ],
+                "expected": "能力"
+            }
+        ],
+        "action": "DoNothing"
+    },
+    "绘卷满级搜索结束": {
+        "recognition": "And",
+        "all_of": [
+            "绘卷详情页标识",
+            {
+                "recognition": "OCR",
+                "roi": [
+                    1000,
+                    150,
+                    230,
+                    150
+                ],
+                "expected": "等级已满"
+            }
+        ],
+        "action": "DoNothing",
+        "next": [
+            "等级提升"
+        ],
         "timeout": 5000
     }
 }

@@ -460,3 +460,4 @@ debug
 
 # Machine-specific shortcuts
 *.lnk
+/.validation-account-deps/
